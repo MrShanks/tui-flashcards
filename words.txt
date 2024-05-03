@@ -1,0 +1,187 @@
+der Hund, the dog
+die Katze, the cat
+das Haus, the house
+das Auto, the car
+der Baum, the tree
+der Garten, the garden
+der Apfel, the apple
+der Tisch, the table
+der Stuhl, the chair
+das Fenster, the window
+die Tür, the door
+das Buch, the book
+der Kuchen, the cake
+das Flugzeug, the airplane
+die Straße, the street
+die Brücke, the bridge
+der Fluss, the river
+der See, the lake
+der Berg, the mountain
+die Blume, the flower
+die Sonne, the sun
+der Mond, the moon
+die Sterne, the stars
+die Wolke, the cloud
+der Regen, the rain
+der Schnee, the snow
+der Wind, the wind
+das Wetter, the weather
+der Sommer, the summer
+der Winter, the winter
+der Frühling, the spring
+der Herbst, the autumn
+der Vogel, the bird
+der Fisch, the fish
+die Maus, the mouse
+die Ratte, the rat
+der Käse, the cheese
+die Milch, the milk
+das Brot, the bread
+die Butter, the butter
+das Ei, the egg
+das Fleisch, the meat
+das Gemüse, the vegetables
+das Obst, the fruit
+der Salat, the salad
+die Suppe, the soup
+der Reis, the rice
+die Kartoffel, the potato
+die Tomate, the tomato
+die Gurke, the cucumber
+die Zwiebel, the onion
+der Knoblauch, the garlic
+die Paprika, the bell pepper
+der Pilz, the mushroom
+die Zitrone, the lemon
+die Orange, the orange
+die Banane, the banana
+die Erdbeere, the strawberry
+die Traube, the grape
+die Kirsche, the cherry
+der Wein, the wine
+das Bier, the beer
+das Wasser, the water
+das Fleisch, the meat
+das Gemüse, the vegetables
+das Obst, the fruit
+der Salat, the salad
+die Suppe, the soup
+der Reis, the rice
+die Kartoffel, the potato
+die Tomate, the tomato
+die Gurke, the cucumber
+die Zwiebel, the onion
+der Knoblauch, the garlic
+die Paprika, the bell pepper
+der Pilz, the mushroom
+die Zitrone, the lemon
+die Orange, the orange
+die Banane, the banana
+die Erdbeere, the strawberry
+die Traube, the grape
+die Kirsche, the cherry
+der Wein, the wine
+das Bier, the beer
+das Wasser, the water
+der Saft, the juice
+der Kaffee, the coffee
+der Tee, the tea
+die Milch, the milk
+der Zucker, the sugar
+das Salz, the salt
+das Öl, the oil
+der Essig, the vinegar
+die Butter, the butter
+die Marmelade, the jam
+der Honig, the honey
+das Brot, the bread
+das Brötchen, the bun
+das Croissant, the croissant
+die Brezel, the pretzel
+der Kuchen, the cake
+die Torte, the tart
+das Gebäck, the pastry
+das Eis, the ice cream
+der Pudding, the pudding
+der Joghurt, the yogurt
+die Schokolade, the chocolate
+das Bonbon, the candy
+der Keks, the cookie
+die Nudeln, the pasta
+die Spaghetti, the spaghetti
+die Pizza, the pizza
+der Burger, the burger
+das Sandwich, the sandwich
+die Pommes, the fries
+das Gemüse, the vegetables
+die Karotte, the carrot
+der Brokkoli, the broccoli
+der Blumenkohl, the cauliflower
+der Spinat, the spinach
+die Erbse, the pea
+die Bohne, the bean
+die Zucchini, the zucchini
+die Aubergine, the eggplant
+arbeiten, to work
+spielen, to play
+lernen, to learn
+gehen, to go
+kommen, to come
+machen, to do/make
+sehen, to see
+hören, to hear
+sprechen, to speak
+denken, to think
+wissen, to know (facts)
+glauben, to believe
+essen, to eat
+trinken, to drink
+schlafen, to sleep
+lesen, to read
+schreiben, to write
+laufen, to walk/run
+stehen, to stand
+sitzen, to sit
+liegen, to lie
+fliegen, to fly
+fahren, to drive
+schwimmen, to swim
+tanzen, to dance
+singen, to sing
+malen, to paint
+zeichnen, to draw
+reisen, to travel
+wandern, to hike
+klettern, to climb
+reparieren, to repair
+planen, to plan
+entspannen, to relax
+besuchen, to visit
+verstehen, to understand
+erklären, to explain
+bestellen, to order
+kaufen, to buy
+verkaufen, to sell
+öffnen, to open
+schließen, to close
+einladen, to invite
+treffen, to meet
+telefonieren, to call
+warten, to wait
+helfen, to help
+benötigen, to need
+suchen, to search/look for
+finden, to find
+entdecken, to discover
+erkunden, to explore
+erfinden, to invent
+erzählen, to tell/narrate
+empfehlen, to recommend
+folgen, to follow
+lehren, to teach
+lachen, to laugh
+weinen, to cry
+beten, to pray
+rennen, to run
+bauen, to build
+malen, to paint
