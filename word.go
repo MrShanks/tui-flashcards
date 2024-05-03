@@ -8,6 +8,8 @@ import (
 	"strings"
 )
 
+var wordFile = "words.txt"
+
 type Word struct {
 	text        string
 	translation string
@@ -32,7 +34,7 @@ func pickRandomWords(words []*Word, n int) []*Word {
 // LoadWords reads words from the words.txt file and creates a slice of words
 // that are stored in memory
 func LoadWords() ([]*Word, error) {
-	file, err := os.Open("words.txt")
+	file, err := os.Open(wordFile)
 	if err != nil {
 		fmt.Println("Error:", err)
 		return nil, err
