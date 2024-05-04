@@ -82,6 +82,9 @@ func main() {
 	rand.New(rand.NewSource(time.Now().UnixNano()))
 	scanner := bufio.NewScanner(os.Stdin)
 	bestScore, err := ReadBestScore("bestScore.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	clearScreen()
 
@@ -130,7 +133,7 @@ func main() {
 	if score > bestScore {
 		UpdateBestScore("bestScore.txt", score)
 		fmt.Println("Congrats this is the best you have done so far")
-		fmt.Println(normal.Render(fmt.Sprintf("%d/%d", score, len(words))))
+		fmt.Println(correct.Render(fmt.Sprintf("%d/%d", score, len(words))))
 		fmt.Printf("Don't forget to come back tomorrow!\n")
 	} else {
 		fmt.Printf("Great your final Score is: \n")

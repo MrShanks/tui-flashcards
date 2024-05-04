@@ -12,7 +12,7 @@ die Tür, the door
 das Buch, the book
 der Kuchen, the cake
 das Flugzeug, the airplane
-die Straße, the street
+die Strasse, the street
 die Brücke, the bridge
 der Fluss, the river
 der See, the lake
@@ -163,7 +163,7 @@ bestellen, to order
 kaufen, to buy
 verkaufen, to sell
 öffnen, to open
-schließen, to close
+schliessen, to close
 einladen, to invite
 treffen, to meet
 telefonieren, to call
