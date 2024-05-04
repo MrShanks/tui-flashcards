@@ -9,13 +9,6 @@ import (
 var score, counter int
 var wrongWords = make(map[string]string)
 
-func startUp(scanner *bufio.Scanner) {
-	clearScreen()
-	fmt.Println("Hi Welcome back to your language training")
-	fmt.Println("Ready?")
-	scanner.Scan()
-}
-
 func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
@@ -34,6 +27,7 @@ func main() {
 	startUp(scanner)
 	translateWords(wordMap, scanner, false)
 
+	// start the second loop to answer the words you didn't get right
 	for {
 		if len(wrongWords) == 0 {
 			break

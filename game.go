@@ -8,6 +8,13 @@ import (
 	"strings"
 )
 
+func startUp(scanner *bufio.Scanner) {
+	clearScreen()
+	fmt.Println("Hi Welcome back to your language training")
+	fmt.Println("Ready?")
+	scanner.Scan()
+}
+
 func clearScreen() {
 	cmd := exec.Command("clear")
 	cmd.Stdout = os.Stdout
@@ -21,7 +28,11 @@ func translateWords(wordMap map[string]string, scanner *bufio.Scanner, repeat bo
 			counter++
 		}
 		clearScreen()
-		fmt.Printf("Write the translation %d/%d\t\t\t\tScore: %d\n", counter, len(wordMap), score)
+		if repeat {
+			fmt.Printf("Write the translation \t\t\t\tScore: %d\n", score)
+		} else {
+			fmt.Printf("Write the translation %d/%d\t\t\t\tScore: %d\n", counter, len(wordMap), score)
+		}
 		fmt.Println(normal.Render(text))
 		fmt.Print("> ")
 		scanner.Scan()
@@ -52,7 +63,6 @@ func translateWords(wordMap map[string]string, scanner *bufio.Scanner, repeat bo
 			if repeat {
 				delete(wordMap, text)
 			}
-			continue
 		}
 	}
 }
