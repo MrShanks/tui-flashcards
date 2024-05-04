@@ -3,53 +3,13 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"math/rand"
 	"os"
 	"os/exec"
-	"strconv"
 	"strings"
-	"time"
-
-	"github.com/charmbracelet/lipgloss"
 )
 
-var normal = lipgloss.NewStyle().
-	Border(lipgloss.ThickBorder(), true, false).
-	BorderForeground(lipgloss.Color("#3C3C3C")).
-	Bold(true).
-	Foreground(lipgloss.Color("#FAFAFA")).
-	Background(lipgloss.Color("#3C3C3C")).
-	PaddingTop(1).
-	PaddingBottom(1).
-	Align(lipgloss.Center).
-	Width(22)
-
-var wrong = lipgloss.NewStyle().
-	Border(lipgloss.ThickBorder(), true, false).
-	BorderForeground(lipgloss.Color("#3C3C3C")).
-	Bold(true).
-	Foreground(lipgloss.Color("#FAFAFA")).
-	Background(lipgloss.Color("#E7625F")).
-	PaddingTop(1).
-	PaddingBottom(1).
-	Align(lipgloss.Center).
-	Width(22)
-
-var correctAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#00EE00"))
-
-var correct = lipgloss.NewStyle().
-	Border(lipgloss.ThickBorder(), true, false).
-	BorderForeground(lipgloss.Color("#3C3C3C")).
-	Bold(true).
-	Foreground(lipgloss.Color("#FAFAFA")).
-	Background(lipgloss.Color("#8BCD50")).
-	PaddingTop(1).
-	PaddingBottom(1).
-	Align(lipgloss.Center).
-	Width(22)
-
 var score int
-var wrongWords []*Word
+var wrongWords = make(map[string]string)
 
 func clearScreen() {
 	cmd := exec.Command("clear")
@@ -57,31 +17,10 @@ func clearScreen() {
 	cmd.Run()
 }
 
-func UpdateBestScore(filename string, score int) error {
-	scoreStr := strconv.Itoa(score)
-	err := os.WriteFile(filename, []byte(scoreStr), 0644)
-	if err != nil {
-		return err
-	}
-	return nil
-}
-
-func ReadBestScore(filename string) (int, error) {
-	content, err := os.ReadFile(filename)
-	if err != nil {
-		return 0, err
-	}
-	bestScore, err := strconv.Atoi(string(content))
-	if err != nil {
-		return 0, err
-	}
-	return bestScore, nil
-
-}
-
 func main() {
-	rand.New(rand.NewSource(time.Now().UnixNano()))
+
 	scanner := bufio.NewScanner(os.Stdin)
+
 	bestScore, err := ReadBestScore("bestScore.txt")
 	if err != nil {
 		fmt.Println(err)
@@ -111,7 +50,7 @@ func main() {
 
 		if word.translation != input || len(args) == 0 {
 			clearScreen()
-			wrongWords = append(wrongWords, word)
+			wrongWords[word.text] = word.translation
 			fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", word.text, input)))
 			fmt.Println("Expected: ", correctAnswerStyle.Render(word.translation))
 			fmt.Println("Press enter to continue")
@@ -131,47 +70,43 @@ func main() {
 			continue
 		}
 	}
+
 	for {
 		if len(wrongWords) == 0 {
 			break
 		}
-		for i, word := range wrongWords {
+		for word, translation := range wrongWords {
 			clearScreen()
-			fmt.Printf("Write the translation %d/%d\t\t\t\tScore: %d\n", i, len(words), score)
-			fmt.Println(normal.Render(word.text))
+			fmt.Printf("Write the translation \t\t\t\tScore: %d\n", score)
+			fmt.Println(normal.Render(word))
 			fmt.Print("> ")
 			scanner.Scan()
 			input := scanner.Text()
 			args := strings.Fields(input)
-			if word.translation != input || len(args) == 0 {
+
+			if translation != input || len(args) == 0 {
 				clearScreen()
-				wrongWords = append(wrongWords, word)
-				fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", word.text, input)))
-				fmt.Println("Expected: ", correctAnswerStyle.Render(word.translation))
+				wrongWords[word] = translation
+				fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", word, input)))
+				fmt.Println("Expected: ", correctAnswerStyle.Render(translation))
 				fmt.Println("Press enter to continue")
 				scanner.Scan()
 				clearScreen()
 				continue
 			}
 
-			if word.translation == input {
-				if i >= len(wrongWords) {
-					wrongWords = []*Word{}
-				} else {
-					wrongWords = append(wrongWords[:i], wrongWords[i+1:]...)
-				}
+			if translation == input {
 				clearScreen()
-				fmt.Println(correct.Render(fmt.Sprintf("%s : %s", word.text, input)))
+				fmt.Println(correct.Render(fmt.Sprintf("%s : %s", word, input)))
 				fmt.Println("Great that was the right answer")
 				fmt.Println("Press enter to continue")
 				scanner.Scan()
 				clearScreen()
-				continue
+				delete(wrongWords, word)
+				break
 			}
-
 		}
 	}
-
 	if score > bestScore {
 		UpdateBestScore("bestScore.txt", score)
 		fmt.Println("Congrats this is the best you have done so far")
