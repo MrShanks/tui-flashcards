@@ -49,6 +49,7 @@ var correct = lipgloss.NewStyle().
 	Width(22)
 
 var score int
+var wrongWords []*Word
 
 func clearScreen() {
 	cmd := exec.Command("clear")
@@ -110,6 +111,7 @@ func main() {
 
 		if word.translation != input || len(args) == 0 {
 			clearScreen()
+			wrongWords = append(wrongWords, word)
 			fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", word.text, input)))
 			fmt.Println("Expected: ", correctAnswerStyle.Render(word.translation))
 			fmt.Println("Press enter to continue")
@@ -127,6 +129,46 @@ func main() {
 			scanner.Scan()
 			clearScreen()
 			continue
+		}
+	}
+	for {
+		if len(wrongWords) == 0 {
+			break
+		}
+		for i, word := range wrongWords {
+			clearScreen()
+			fmt.Printf("Write the translation %d/%d\t\t\t\tScore: %d\n", i, len(words), score)
+			fmt.Println(normal.Render(word.text))
+			fmt.Print("> ")
+			scanner.Scan()
+			input := scanner.Text()
+			args := strings.Fields(input)
+			if word.translation != input || len(args) == 0 {
+				clearScreen()
+				wrongWords = append(wrongWords, word)
+				fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", word.text, input)))
+				fmt.Println("Expected: ", correctAnswerStyle.Render(word.translation))
+				fmt.Println("Press enter to continue")
+				scanner.Scan()
+				clearScreen()
+				continue
+			}
+
+			if word.translation == input {
+				if i >= len(wrongWords) {
+					wrongWords = []*Word{}
+				} else {
+					wrongWords = append(wrongWords[:i], wrongWords[i+1:]...)
+				}
+				clearScreen()
+				fmt.Println(correct.Render(fmt.Sprintf("%s : %s", word.text, input)))
+				fmt.Println("Great that was the right answer")
+				fmt.Println("Press enter to continue")
+				scanner.Scan()
+				clearScreen()
+				continue
+			}
+
 		}
 	}
 
