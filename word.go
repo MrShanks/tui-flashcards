@@ -22,13 +22,17 @@ func NewWord(text, translation string) *Word {
 	}
 }
 
-func pickRandomWords(words []*Word, n int) []*Word {
+func pickRandomWords(words []*Word, n int) map[string]string {
+	wordMap := make(map[string]string)
 	copyWords := make([]*Word, len(words))
 	copy(copyWords, words)
 	rand.Shuffle(len(copyWords), func(i, j int) {
 		copyWords[i], copyWords[j] = copyWords[j], copyWords[i]
 	})
-	return copyWords[:n]
+	for _, word := range copyWords[:n] {
+		wordMap[word.text] = word.translation
+	}
+	return wordMap
 }
 
 // LoadWords reads words from the words.txt file and creates a slice of words

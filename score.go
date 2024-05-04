@@ -1,16 +1,20 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 )
 
-func UpdateBestScore(filename string, score int) error {
+func UpdateBestScore(filename string, score int, wordMap map[string]string) error {
 	scoreStr := strconv.Itoa(score)
 	err := os.WriteFile(filename, []byte(scoreStr), 0644)
 	if err != nil {
 		return err
 	}
+	fmt.Println("Congrats this is the best you have done so far")
+	fmt.Println(correct.Render(fmt.Sprintf("%d/%d", score, len(wordMap))))
+	fmt.Printf("Don't forget to come back tomorrow!\n")
 	return nil
 }
 
