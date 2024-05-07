@@ -5,3 +5,5 @@ der Tisch,the table,Ich esse auf dem Tisch
 helfen,to help,Ich helfe meinem Bruder bei seinen Hausaufgaben
 die Haut,the skin,Er hat empfindliche Haut
 der Ausgang,the exit,Sie finden den Ausgang auf der linken Seite des Gebäudes
+heiss,hot,Mir ist heiss
+das Pferd,the horse,Wessen Pferd hat das Rennen gewonnen?
