@@ -8,29 +8,64 @@ import (
 	"strings"
 )
 
-var wordFile = "words.txt"
+var wordFile = "new_words.txt"
 
 type Word struct {
 	text        string
 	translation string
+	example     string
 }
 
-func NewWord(text, translation string) *Word {
+func NewWord(text, translation, example string) *Word {
 	return &Word{
 		text:        text,
 		translation: translation,
+		example:     example,
 	}
 }
 
-func pickRandomWords(words []*Word, n int) map[string]string {
-	wordMap := make(map[string]string)
+func AddWordToFile() error {
+	scanner := bufio.NewScanner(os.Stdin)
+
+	fmt.Println("Write the new German word")
+	fmt.Printf("> ")
+	scanner.Scan()
+	germanWord := scanner.Text()
+
+	fmt.Println("Write the English translation")
+	fmt.Printf("> ")
+	scanner.Scan()
+	translation := scanner.Text()
+
+	fmt.Println("Type a sentence with that word")
+	fmt.Printf("> ")
+	scanner.Scan()
+	sentence := scanner.Text()
+
+	newEntry := fmt.Sprintf("%s,%s,%s\n", germanWord, translation, sentence)
+
+	file, err := os.OpenFile(wordFile, os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		return err
+	}
+
+	_, err = file.WriteString(newEntry)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func pickRandomWords(words []*Word, n int) map[string][]string {
+	wordMap := make(map[string][]string)
 	copyWords := make([]*Word, len(words))
 	copy(copyWords, words)
 	rand.Shuffle(len(copyWords), func(i, j int) {
 		copyWords[i], copyWords[j] = copyWords[j], copyWords[i]
 	})
 	for _, word := range copyWords[:n] {
-		wordMap[word.text] = word.translation
+		wordMap[word.text] = []string{word.translation, word.example}
 	}
 	return wordMap
 }
@@ -51,14 +86,16 @@ func LoadWords() ([]*Word, error) {
 
 	for scanner.Scan() {
 		parts := strings.Split(scanner.Text(), ",")
-		if len(parts) != 2 {
+		fmt.Println(parts)
+		if len(parts) != 3 {
 			fmt.Println("Invalid line:", scanner.Text())
 			continue
 		}
 
 		word := NewWord(
 			strings.TrimSpace(parts[1]),
-			strings.TrimSpace(parts[0]))
+			strings.TrimSpace(parts[0]),
+			strings.TrimSpace(parts[2]))
 		words = append(words, word)
 	}
 

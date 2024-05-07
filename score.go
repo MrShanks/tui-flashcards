@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func UpdateBestScore(filename string, score int, wordMap map[string]string) error {
+func UpdateBestScore(filename string, score int, wordMap map[string][]string) error {
 	scoreStr := strconv.Itoa(score)
 	err := os.WriteFile(filename, []byte(scoreStr), 0644)
 	if err != nil {

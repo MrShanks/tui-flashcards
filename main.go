@@ -7,9 +7,11 @@ import (
 )
 
 var score, counter int
-var wrongWords = make(map[string]string)
+var wrongWords = make(map[string][]string)
 
 func main() {
+
+	AddWordToFile()
 
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -17,7 +19,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	wordMap := pickRandomWords(words, 10)
+	wordMap := pickRandomWords(words, 5)
 
 	bestScore, err := ReadBestScore("bestScore.txt")
 	if err != nil {

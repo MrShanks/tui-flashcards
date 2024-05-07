@@ -21,9 +21,16 @@ func clearScreen() {
 	cmd.Run()
 }
 
-func translateWords(wordMap map[string]string, scanner *bufio.Scanner, repeat bool) {
+func printExample(example string) {
+	fmt.Println("Here is an example:")
+	fmt.Println(exampleStyle.Render(example))
+}
 
-	for text, translation := range wordMap {
+func translateWords(wordMap map[string][]string, scanner *bufio.Scanner, repeat bool) {
+
+	for text, wordslice := range wordMap {
+		translation := wordslice[0]
+		example := wordslice[1]
 		if !repeat {
 			counter++
 		}
@@ -41,9 +48,10 @@ func translateWords(wordMap map[string]string, scanner *bufio.Scanner, repeat bo
 
 		if translation != input || len(args) == 0 {
 			clearScreen()
-			wrongWords[text] = translation
+			wrongWords[text] = []string{translation, example}
 			fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", text, input)))
 			fmt.Println("Expected: ", correctAnswerStyle.Render(translation))
+			printExample(example)
 			fmt.Println("Press enter to continue")
 			scanner.Scan()
 			clearScreen()
@@ -57,6 +65,7 @@ func translateWords(wordMap map[string]string, scanner *bufio.Scanner, repeat bo
 			}
 			fmt.Println(correct.Render(fmt.Sprintf("%s : %s", text, input)))
 			fmt.Println("Great that was the right answer")
+			printExample(example)
 			fmt.Println("Press enter to continue")
 			scanner.Scan()
 			clearScreen()

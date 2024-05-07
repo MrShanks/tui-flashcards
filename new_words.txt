@@ -1,0 +1,7 @@
+spielen,to play,Ich spiele Fussball
+nehmen,to take,Ich neheme das Salz
+die Tür,the door,Ich schliesse die Tür
+der Tisch,the table,Ich esse auf dem Tisch
+helfen,to help,Ich helfe meinem Bruder bei seinen Hausaufgaben
+die Haut,the skin,Er hat empfindliche Haut
+der Ausgang,the exit,Sie finden den Ausgang auf der linken Seite des Gebäudes
