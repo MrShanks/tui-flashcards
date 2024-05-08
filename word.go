@@ -6,6 +6,8 @@ import (
 	"math/rand"
 	"os"
 	"strings"
+
+	"github.com/jedib0t/go-pretty/v6/table"
 )
 
 var wordFile = "new_words.txt"
@@ -104,4 +106,22 @@ func LoadWords() ([]*Word, error) {
 		return nil, err
 	}
 	return words, nil
+}
+
+func ListWordsFromFile() {
+	words, err := LoadWords()
+	if err != nil {
+		fmt.Printf("Could Load words from file: %s\n", err)
+	}
+
+	t := table.NewWriter()
+	t.SetOutputMirror(os.Stdout)
+	t.AppendHeader(table.Row{"#", "German", "English", "Example"})
+	for i, word := range words {
+		i++
+		t.AppendRow(table.Row{i, word.translation, word.text, word.example})
+		t.AppendSeparator()
+	}
+	t.SetStyle(table.StyleRounded)
+	t.Render()
 }
