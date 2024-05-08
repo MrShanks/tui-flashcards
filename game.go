@@ -86,7 +86,7 @@ func NewGame() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	wordMap := pickRandomWords(words, 5)
+	wordMap := pickRandomWords(words, 10)
 
 	bestScore, err := ReadBestScore("bestScore.txt")
 	if err != nil {
