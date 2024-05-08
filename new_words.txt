@@ -7,3 +7,5 @@ die Haut,the skin,Er hat empfindliche Haut
 der Ausgang,the exit,Sie finden den Ausgang auf der linken Seite des Gebäudes
 heiss,hot,Mir ist heiss
 das Pferd,the horse,Wessen Pferd hat das Rennen gewonnen?
+die Pflanze,the plant,Die Pflanze ist im Schuss
+das Auto,the car,Ich kann mir kein Auto leisten
