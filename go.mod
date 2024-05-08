@@ -3,9 +3,12 @@ module github.com/MrShanks/tui-flashcards
 go 1.21.7
 
 require (
+	github.com/charmbracelet/lipgloss v0.10.0
+	github.com/jedib0t/go-pretty/v6 v6.5.9
+)
+
+require (
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
-	github.com/charmbracelet/lipgloss v0.10.0 // indirect
-	github.com/jedib0t/go-pretty/v6 v6.5.9 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
 	github.com/mattn/go-isatty v0.0.18 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
