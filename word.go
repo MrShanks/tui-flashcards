@@ -60,7 +60,12 @@ func AddWordToFile() error {
 	return nil
 }
 
-func pickRandomWords(words []*Word, n int) map[string]*Word {
+func pickRandomWords(n int) map[string]*Word {
+	words, err := LoadWords()
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	wordMap := make(map[string]*Word)
 	copyWords := make([]*Word, len(words))
 	copy(copyWords, words)
