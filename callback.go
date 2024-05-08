@@ -5,6 +5,8 @@ import (
 	"os"
 )
 
+var iterations = 10
+
 func callbackExit() {
 	fmt.Println("Ok bye, see you!")
 	os.Exit(0)
@@ -16,7 +18,7 @@ func callbackHelp() {
 	}
 }
 func callbackPlay() {
-	NewGame()
+	NewGame(iterations)
 }
 func callbackNew() {
 	AddWordToFile()

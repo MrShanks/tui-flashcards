@@ -13,9 +13,10 @@ import (
 var wordFile = "new_words.txt"
 
 type Word struct {
-	text        string
-	translation string
-	example     string
+	text         string
+	translation  string
+	example      string
+	wrongCounter int
 }
 
 func NewWord(text, translation, example string) *Word {
@@ -59,15 +60,15 @@ func AddWordToFile() error {
 	return nil
 }
 
-func pickRandomWords(words []*Word, n int) map[string][]string {
-	wordMap := make(map[string][]string)
+func pickRandomWords(words []*Word, n int) map[string]*Word {
+	wordMap := make(map[string]*Word)
 	copyWords := make([]*Word, len(words))
 	copy(copyWords, words)
 	rand.Shuffle(len(copyWords), func(i, j int) {
 		copyWords[i], copyWords[j] = copyWords[j], copyWords[i]
 	})
 	for _, word := range copyWords[:n] {
-		wordMap[word.text] = []string{word.translation, word.example}
+		wordMap[word.text] = word
 	}
 	return wordMap
 }
@@ -88,7 +89,6 @@ func LoadWords() ([]*Word, error) {
 
 	for scanner.Scan() {
 		parts := strings.Split(scanner.Text(), ",")
-		fmt.Println(parts)
 		if len(parts) != 3 {
 			fmt.Println("Invalid line:", scanner.Text())
 			continue

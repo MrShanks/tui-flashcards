@@ -10,3 +10,4 @@ das Pferd,the horse,Wessen Pferd hat das Rennen gewonnen?
 die Küche,the kitchen,Ihre Küche ist immer super sauber
 die Pflanze,the plant,Die Pflanze ist im Schuss
 das Auto,the car,Ich kann mir kein Auto leisten
+springen,to jump,Ich springe auf das Bett
