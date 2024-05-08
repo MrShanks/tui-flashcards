@@ -7,3 +7,4 @@ die Haut,the skin,Er hat empfindliche Haut
 der Ausgang,the exit,Sie finden den Ausgang auf der linken Seite des Gebäudes
 heiss,hot,Mir ist heiss
 das Pferd,the horse,Wessen Pferd hat das Rennen gewonnen?
+die Küche,the kitchen,Ihre Küche ist immer super sauber

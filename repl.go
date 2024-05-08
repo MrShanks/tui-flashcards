@@ -34,6 +34,11 @@ func getCommands() map[string]command {
 			desc:     "Add a new word to the collection",
 			callback: callbackNew,
 		},
+		"list": {
+			text:     "list",
+			desc:     "List all words in the database",
+			callback: callbackList,
+		},
 	}
 }
 

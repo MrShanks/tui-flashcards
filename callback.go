@@ -21,6 +21,9 @@ func callbackPlay() {
 func callbackNew() {
 	AddWordToFile()
 }
+func callbackList() {
+	ListWordsFromFile()
+}
 func callbackDefault() {
 	fmt.Println("Invalid command, type help if you are stuck!")
 }
