@@ -36,4 +36,5 @@ var correct = lipgloss.NewStyle().
 	Width(22)
 
 var correctAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#00EE00"))
+var wrongAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EE0000"))
 var exampleStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#0000EE"))
