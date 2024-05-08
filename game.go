@@ -97,4 +97,6 @@ func NewGame(iterations int) {
 	fmt.Println("Press enter to see the report")
 	scanner.Scan()
 	GenerateReport(wordMap)
+	score = 0
+	counter = 0
 }

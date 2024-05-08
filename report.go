@@ -15,7 +15,7 @@ func GenerateReport(words map[string]*Word) {
 	var counter int
 	for _, word := range words {
 		counter++
-		if word.wrongCounter >= 1 {
+		if word.wrongCounter > 1 {
 			t.AppendRow(table.Row{
 				wrongAnswerStyle.Render(strconv.Itoa(counter)),
 				wrongAnswerStyle.Render(word.translation),

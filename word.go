@@ -21,9 +21,10 @@ type Word struct {
 
 func NewWord(text, translation, example string) *Word {
 	return &Word{
-		text:        text,
-		translation: translation,
-		example:     example,
+		text:         text,
+		translation:  translation,
+		example:      example,
+		wrongCounter: 1,
 	}
 }
 
@@ -93,7 +94,7 @@ func LoadWords() ([]*Word, error) {
 	var words []*Word
 
 	for scanner.Scan() {
-		parts := strings.Split(scanner.Text(), ",")
+		parts := strings.Split(scanner.Text(), ";")
 		if len(parts) != 3 {
 			fmt.Println("Invalid line:", scanner.Text())
 			continue

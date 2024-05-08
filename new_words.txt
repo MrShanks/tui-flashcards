@@ -1,13 +1,87 @@
-spielen,to play,Ich spiele Fussball
-nehmen,to take,Ich neheme das Salz
-die Tür,the door,Ich schliesse die Tür
-der Tisch,the table,Ich esse auf dem Tisch
-helfen,to help,Ich helfe meinem Bruder bei seinen Hausaufgaben
-die Haut,the skin,Er hat empfindliche Haut
-der Ausgang,the exit,Sie finden den Ausgang auf der linken Seite des Gebäudes
-heiss,hot,Mir ist heiss
-das Pferd,the horse,Wessen Pferd hat das Rennen gewonnen?
-die Küche,the kitchen,Ihre Küche ist immer super sauber
-die Pflanze,the plant,Die Pflanze ist im Schuss
-das Auto,the car,Ich kann mir kein Auto leisten
-springen,to jump,Ich springe auf das Bett
+spielen;to play;Ich spiele Fussball
+nehmen;to take;Ich neheme das Salz
+die Tür;the door;Ich schliesse die Tür
+der Tisch;the table;Ich esse auf dem Tisch
+helfen;to help;Ich helfe meinem Bruder bei seinen Hausaufgaben
+die Haut;the skin;Er hat empfindliche Haut
+der Ausgang;the exit;Sie finden den Ausgang auf der linken Seite des Gebäudes
+heiss;hot;Mir ist heiss
+das Pferd;the horse;Wessen Pferd hat das Rennen gewonnen?
+die Küche;the kitchen;Ihre Küche ist immer super sauber
+die Pflanze;the plant;Die Pflanze ist im Schuss
+das Auto;the car;Ich kann mir kein Auto leisten
+springen;to jump;Ich springe auf das Bett
+Ich verstehe nicht;I don't understand;Ich verstehe dich nicht
+Ich weiss nicht;I don't know;Ich weiss nicht, ob das richtig ist
+Es tut mir leid;I'm sorry; Es tut mir leid, Herr das wird nicht wieder passieren
+die Tante;the aunt;Meine Tante ist früh gestorben
+Ich habe Hunger;I'm hungry;Ich habe Hunger, ich möchte einen Hamburger essen
+Es ist halb zehn;It's half past nine;Es ist halb zehn, wann beginnt das Spiel?
+Es ist windig;It's windy;Es ist windig draussen, komm rein
+das Eis;the ice;Ich mag Eis in meinem Cocktail
+Es ist sonnig;It’s sunny;Es ist sonnig draußen, gehen wir spazieren?
+das Rad;the wheel;Das Rad dreht sich schnell
+der Helm;the helmet;Der Helm schützt den Kopf
+der Zug;the train;Der Zug fahrt pünktlich ab
+der Koffer;the suitcase;Der Koffer ist schwer
+das Buch; the book; Ich lese gerne ein Buch vor dem Schlafengehen
+das Fenster; the window; Öffne das Fenster, es ist stickig hier drin
+der Stuhl; the chair; Setz dich bitte auf den Stuhl
+die Lampe; the lamp; Die Lampe spendet helles Licht
+der Schrank; the wardrobe; Meine Kleidung ist im Schrank
+der Computer; the computer; Mein neuer Computer ist sehr schnell
+das Telefon; the telephone; Ich rufe dich später an, wenn ich mein Telefon finde
+der Kaffee; the coffee; Ich trinke meinen Kaffee gerne mit Milch
+die Strasse; the street; Die Kinder spielen auf der Strasse
+die Uhr; the clock/watch; Die Uhr zeigt bereits zehn Uhr an
+das Messer; the knife; Bitte reiche mir das Messer zum Brot schneiden
+die Katze; the cat; Unsere Katze schläft auf der Couch
+der Hund; the dog; Der Hund bellt laut, wenn jemand an der Tür klingelt
+das Haus; the house; Unser Haus hat einen großen Garten
+das Bett; the bed; Ich lege mich gerne früh ins Bett
+die Blume; the flower; Die Blume duftet herrlich
+das Wasser; the water; Ich trinke jeden Tag viel Wasser
+der Baum; the tree; Der Baum steht im Garten und spendet Schatten
+das Essen; the food; Wir bereiten heute ein leckeres Essen zu
+die Sonne; the sun; Die Sonne scheint heute besonders hell
+der Mond; the moon; Der Mond leuchtet in der dunklen Nacht
+die Brille; the glasses; Ohne meine Brille sehe ich nicht gut
+das Handy; the mobile phone; Ich habe mein Handy in meiner Tasche vergessen
+der Garten; the garden; Im Sommer verbringen wir viel Zeit im Garten
+der Kühlschrank; the refrigerator; Die Milch steht im Kühlschrank
+das Geld; the money; Mit Geld kann man viele Dinge kaufen
+der Schlüssel; the key; Hast du den Schlüssel für die Tür?
+Ich gehe spazieren; I'm going for a walk; Ich gehe spazieren, um frische Luft zu schnappen.
+Es regnet; It's raining; Es regnet, also brauche ich meinen Regenschirm.
+Wir fahren ins Kino; We're going to the cinema; Wir fahren ins Kino, um einen Film zu sehen.
+Sie liest ein Buch; She's reading a book; Sie liest ein Buch, während sie auf den Bus wartet.
+Ich trinke Kaffee; I'm drinking coffee; Ich trinke Kaffee, um wach zu bleiben.
+Er läuft schnell; He's running fast; Er läuft schnell, um den Bus zu erwischen.
+Sie singt ein Lied; She's singing a song; Sie singt ein Lied, während sie abwäscht.
+Wir kaufen ein Geschenk; We're buying a gift; Wir kaufen ein Geschenk für Omas Geburtstag.
+Es schneit; It's snowing; Es schneit, also machen wir einen Schneemann.
+Sie malt ein Bild; She's painting a picture; Sie malt ein Bild von ihrer Katze.
+Ich höre Musik; I'm listening to music; Ich höre Musik, um mich zu entspannen.
+Er repariert das Auto; He's fixing the car; Er repariert das Auto, damit es wieder fährt.
+Wir essen Mittagessen; We're having lunch; Wir essen Mittagessen, bevor wir zurück zur Arbeit gehen.
+Sie spielt Fußball; She's playing soccer; Sie spielt Fußball mit ihren Freunden im Park.
+Er schreibt einen Brief; He's writing a letter; Er schreibt einen Brief an seine Großeltern.
+Sie backt einen Kuchen; She's baking a cake; Sie backt einen Kuchen für die Geburtstagsfeier.
+Wir gehen schwimmen; We're going swimming; Wir gehen schwimmen, um uns abzukühlen.
+Er putzt die Zähne; He's brushing his teeth; Er putzt die Zähne, bevor er ins Bett geht.
+Sie macht Hausaufgaben; She's doing her homework; Sie macht Hausaufgaben, bevor sie fernsieht.
+Wir gehen einkaufen; We're going shopping; Wir gehen einkaufen, um Lebensmittel zu besorgen.
+Es ist heiß; It's hot; Es ist heiß, also trinken wir kalte Limonade.
+Sie fährt Fahrrad; She's riding a bike; Sie fährt Fahrrad zum Fitnessstudio.
+Wir besuchen einen Freund; We're visiting a friend; Wir besuchen einen Freund, der krank ist.
+Er läuft im Park; He's jogging in the park; Er läuft im Park, um fit zu bleiben.
+Sie nimmt eine Dusche; She's taking a shower; Sie nimmt eine Dusche, bevor sie zur Arbeit geht.
+Wir spielen Karten; We're playing cards; Wir spielen Karten, um Zeit miteinander zu verbringen.
+Er repariert das Fahrrad; He's fixing the bike; Er repariert das Fahrrad, damit es wieder fährt.
+Sie macht Yoga; She's doing yoga; Sie macht Yoga, um sich zu entspannen.
+Wir essen Abendessen; We're having dinner; Wir essen Abendessen, bevor wir einen Film sehen.
+Er kocht Suppe; He's cooking soup; Er kocht Suppe, um sich aufzuwärmen.
+Sie macht einen Spaziergang; She's taking a walk; Sie macht einen Spaziergang, um frische Luft zu schnappen.
+Wir machen einen Ausflug; We're going on a trip; Wir machen einen Ausflug zum Strand.
+Es ist kalt; It's cold; Es ist kalt, also ziehen wir warme Jacken an.
+Sie schreibt eine E-Mail; She's writing an email; Sie schreibt eine E-Mail an ihren Chef.
