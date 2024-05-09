@@ -8,7 +8,6 @@ import (
 )
 
 func GenerateReport(words map[string]*Word) {
-
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
 	t.AppendHeader(table.Row{"#", "Translation", "Word", "Attempts"})

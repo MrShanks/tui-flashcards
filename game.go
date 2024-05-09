@@ -11,7 +11,6 @@ var score, counter int
 var wrongWords = make(map[string]*Word)
 
 func translateWords(wordMap map[string]*Word, scanner *bufio.Scanner, repeat bool) {
-
 	for text, word := range wordMap {
 		translation := word.translation
 		example := word.example
