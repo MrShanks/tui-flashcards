@@ -19,7 +19,7 @@ Ich habe Hunger;I'm hungry;Ich habe Hunger, ich möchte einen Hamburger essen
 Es ist halb zehn;It's half past nine;Es ist halb zehn, wann beginnt das Spiel?
 Es ist windig;It's windy;Es ist windig draussen, komm rein
 das Eis;the ice;Ich mag Eis in meinem Cocktail
-Es ist sonnig;It’s sunny;Es ist sonnig draußen, gehen wir spazieren?
+Es ist sonnig;It’s sunny;Es ist sonnig draussen, gehen wir spazieren?
 das Rad;the wheel;Das Rad dreht sich schnell
 der Helm;the helmet;Der Helm schützt den Kopf
 der Zug;the train;Der Zug fahrt pünktlich ab
@@ -37,7 +37,7 @@ die Uhr; the clock/watch; Die Uhr zeigt bereits zehn Uhr an
 das Messer; the knife; Bitte reiche mir das Messer zum Brot schneiden
 die Katze; the cat; Unsere Katze schläft auf der Couch
 der Hund; the dog; Der Hund bellt laut, wenn jemand an der Tür klingelt
-das Haus; the house; Unser Haus hat einen großen Garten
+das Haus; the house; Unser Haus hat einen grossen Garten
 das Bett; the bed; Ich lege mich gerne früh ins Bett
 die Blume; the flower; Die Blume duftet herrlich
 das Wasser; the water; Ich trinke jeden Tag viel Wasser
@@ -64,14 +64,14 @@ Sie malt ein Bild; She's painting a picture; Sie malt ein Bild von ihrer Katze.
 Ich höre Musik; I'm listening to music; Ich höre Musik, um mich zu entspannen.
 Er repariert das Auto; He's fixing the car; Er repariert das Auto, damit es wieder fährt.
 Wir essen Mittagessen; We're having lunch; Wir essen Mittagessen, bevor wir zurück zur Arbeit gehen.
-Sie spielt Fußball; She's playing soccer; Sie spielt Fußball mit ihren Freunden im Park.
-Er schreibt einen Brief; He's writing a letter; Er schreibt einen Brief an seine Großeltern.
+Sie spielt Fussball; She's playing soccer; Sie spielt Fussball mit ihren Freunden im Park.
+Er schreibt einen Brief; He's writing a letter; Er schreibt einen Brief an seine Grosseltern.
 Sie backt einen Kuchen; She's baking a cake; Sie backt einen Kuchen für die Geburtstagsfeier.
 Wir gehen schwimmen; We're going swimming; Wir gehen schwimmen, um uns abzukühlen.
 Er putzt die Zähne; He's brushing his teeth; Er putzt die Zähne, bevor er ins Bett geht.
 Sie macht Hausaufgaben; She's doing her homework; Sie macht Hausaufgaben, bevor sie fernsieht.
 Wir gehen einkaufen; We're going shopping; Wir gehen einkaufen, um Lebensmittel zu besorgen.
-Es ist heiß; It's hot; Es ist heiß, also trinken wir kalte Limonade.
+Es ist heiss; It's hot; Es ist heiss, also trinken wir kalte Limonade.
 Sie fährt Fahrrad; She's riding a bike; Sie fährt Fahrrad zum Fitnessstudio.
 Wir besuchen einen Freund; We're visiting a friend; Wir besuchen einen Freund, der krank ist.
 Er läuft im Park; He's jogging in the park; Er läuft im Park, um fit zu bleiben.
