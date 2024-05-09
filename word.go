@@ -97,7 +97,7 @@ func LoadWords() ([]*Word, error) {
 		parts := strings.Split(scanner.Text(), ";")
 		if len(parts) != 3 {
 			fmt.Println("Invalid line:", scanner.Text())
-			continue
+			os.Exit(1)
 		}
 
 		word := NewWord(
@@ -109,7 +109,7 @@ func LoadWords() ([]*Word, error) {
 
 	if err := scanner.Err(); err != nil {
 		fmt.Println("Error:", err)
-		return nil, err
+		panic(err)
 	}
 	return words, nil
 }
@@ -117,7 +117,8 @@ func LoadWords() ([]*Word, error) {
 func ListWordsFromFile() {
 	words, err := LoadWords()
 	if err != nil {
-		fmt.Printf("Could Load words from file: %s\n", err)
+		fmt.Printf("Couldn't Load words from file: %s\n", err)
+		panic(err)
 	}
 
 	t := table.NewWriter()

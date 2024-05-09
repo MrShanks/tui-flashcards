@@ -85,3 +85,103 @@ Sie macht einen Spaziergang; She's taking a walk; Sie macht einen Spaziergang, u
 Wir machen einen Ausflug; We're going on a trip; Wir machen einen Ausflug zum Strand.
 Es ist kalt; It's cold; Es ist kalt, also ziehen wir warme Jacken an.
 Sie schreibt eine E-Mail; She's writing an email; Sie schreibt eine E-Mail an ihren Chef.
+Sie macht Gymnastik; She's doing gymnastics; Sie macht Gymnastik, um sich zu dehnen.
+Wir backen Kekse; We're baking cookies; Wir backen Kekse für die Weihnachtsfeier.
+Er liest ein Buch; He's reading a book; Er liest ein Buch im Park.
+Sie hören Musik; They're listening to music; Sie hören Musik während der Autofahrt.
+Wir machen Picknick; We're having a picnic; Wir machen Picknick im Park.
+Er schaut Fernsehen; He's watching TV; Er schaut Fernsehen nach der Arbeit.
+Sie telefoniert mit einem Freund; She's talking on the phone with a friend; Sie telefoniert mit einem Freund über ihre Pläne.
+Wir machen eine Fahrradtour; We're going on a bike ride; Wir machen eine Fahrradtour durch die Landschaft.
+Er schreibt Notizen; He's taking notes; Er schreibt Notizen während des Meetings.
+Sie fährt in den Urlaub; She's going on vacation; Sie fährt in den Urlaub nach Spanien.
+Wir gehen zum Arzt; We're going to the doctor; Wir gehen zum Arzt für eine Routineuntersuchung.
+Er malt ein Bild; He's drawing a picture; Er malt ein Bild von seiner Familie.
+Sie läuft im Park; She's jogging in the park; Sie läuft im Park, um sich fit zu halten.
+Wir machen einen Stadtbummel; We're taking a city stroll; Wir machen einen Stadtbummel und besichtigen die Sehenswürdigkeiten.
+Er sucht nach seinem Schlüssel; He's looking for his keys; Er sucht nach seinem Schlüssel im Haus.
+Sie macht ein Nickerchen; She's taking a nap; Sie macht ein Nickerchen nach dem Mittagessen.
+Wir gehen ins Theater; We're going to the theater; Wir gehen ins Theater, um ein Stück anzusehen.
+Er putzt das Badezimmer; He's cleaning the bathroom; Er putzt das Badezimmer am Wochenende.
+Sie schreibt eine To-Do-Liste; She's writing a to-do list; Sie schreibt eine To-Do-Liste für die Woche.
+Wir machen einen Ausflug in die Berge; We're going on a mountain trip; Wir machen einen Ausflug in die Berge zum Wandern.
+Er macht ein Feuer im Kamin; He's making a fire in the fireplace; Er macht ein Feuer im Kamin, um das Wohnzimmer zu wärmen.
+Sie malt ein Bild; She's painting a picture; Sie malt ein Bild von der Landschaft.
+Wir spielen Volleyball am Strand; We're playing volleyball on the beach; Wir spielen Volleyball am Strand, um uns zu amüsieren.
+Er geht zum Friseur; He's going to the hairdresser; Er geht zum Friseur für einen neuen Haarschnitt.
+Sie macht einen Spaziergang im Park; She's taking a walk in the park; Sie macht einen Spaziergang im Park, um die Natur zu genießen.
+Wir machen eine Fahrradtour durch die Stadt; We're going on a bike tour through the city; Wir machen eine Fahrradtour durch die Stadt und besichtigen die Sehenswürdigkeiten.
+Er macht Yogaübungen; He's doing yoga exercises; Er macht Yogaübungen für Flexibilität und Entspannung.
+Sie hört einem Podcast zu; She's listening to a podcast; Sie hört einem Podcast zu, während sie putzt.
+Wir machen eine Bootsfahrt; We're going on a boat trip; Wir machen eine Bootsfahrt auf dem See.
+Er kocht ein romantisches Abendessen; He's cooking a romantic dinner; Er kocht ein romantisches Abendessen für seinen Partner.
+Sie hat Gymnastik gemacht; She did gymnastics; Sie hat Gymnastik gemacht, um sich zu dehnen.
+Wir haben Kekse gebacken; We baked cookies; Wir haben Kekse für die Weihnachtsfeier gebacken.
+Er hat ein Buch gelesen; He read a book; Er hat ein Buch im Park gelesen.
+Sie haben Musik gehört; They listened to music; Sie haben Musik während der Autofahrt gehört.
+Wir haben Picknick gemacht; We had a picnic; Wir haben Picknick im Park gemacht.
+Er hat Fernsehen geschaut; He watched TV; Er hat Fernsehen nach der Arbeit geschaut.
+Sie hat mit einem Freund telefoniert; She talked on the phone with a friend; Sie hat mit einem Freund über ihre Pläne telefoniert.
+Wir haben eine Fahrradtour gemacht; We went on a bike ride; Wir haben eine Fahrradtour durch die Landschaft gemacht.
+Er hat Notizen geschrieben; He took notes; Er hat Notizen während des Meetings geschrieben.
+Sie ist in den Urlaub gefahren; She went on vacation; Sie ist in den Urlaub nach Spanien gefahren.
+Wir sind zum Arzt gegangen; We went to the doctor; Wir sind zum Arzt für eine Routineuntersuchung gegangen.
+Er hat ein Bild gemalt; He drew a picture; Er hat ein Bild von seiner Familie gemalt.
+Sie ist im Park gelaufen; She jogged in the park; Sie ist im Park gelaufen, um sich fit zu halten.
+Wir haben einen Stadtbummel gemacht; We took a city stroll; Wir haben einen Stadtbummel gemacht und die Sehenswürdigkeiten besichtigt.
+Er hat nach seinem Schlüssel gesucht; He looked for his keys; Er hat nach seinem Schlüssel im Haus gesucht.
+Sie hat ein Nickerchen gemacht; She took a nap; Sie hat ein Nickerchen nach dem Mittagessen gemacht.
+Wir sind ins Theater gegangen; We went to the theater; Wir sind ins Theater gegangen, um ein Stück anzusehen.
+Er hat das Badezimmer geputzt; He cleaned the bathroom; Er hat das Badezimmer am Wochenende geputzt.
+Sie hat eine To-Do-Liste geschrieben; She wrote a to-do list; Sie hat eine To-Do-Liste für die Woche geschrieben.
+Wir haben einen Ausflug in die Berge gemacht; We went on a mountain trip; Wir haben einen Ausflug in die Berge zum Wandern gemacht.
+Er hat ein Feuer im Kamin gemacht; He made a fire in the fireplace; Er hat ein Feuer im Kamin gemacht, um das Wohnzimmer zu wärmen.
+Sie hat ein Bild gemalt; She painted a picture; Sie hat ein Bild von der Landschaft gemalt.
+Wir haben Volleyball am Strand gespielt; We played volleyball on the beach; Wir haben Volleyball am Strand gespielt, um uns zu amüsieren.
+Er ist zum Friseur gegangen; He went to the hairdresser; Er ist zum Friseur für einen neuen Haarschnitt gegangen.
+Sie hat einen Spaziergang im Park gemacht; She took a walk in the park; Sie hat einen Spaziergang im Park gemacht, um die Natur zu genießen.
+Wir haben eine Fahrradtour durch die Stadt gemacht; We went on a bike tour through the city; Wir haben eine Fahrradtour durch die Stadt gemacht und die Sehenswürdigkeiten besichtigt.
+Er hat Yogaübungen gemacht; He did yoga exercises; Er hat Yogaübungen für Flexibilität und Entspannung gemacht.
+Sie hat einem Podcast zugehört; She listened to a podcast; Sie hat einem Podcast zugehört, während sie putzte.
+Wir haben eine Bootsfahrt gemacht; We went on a boat trip; Wir haben eine Bootsfahrt auf dem See gemacht.
+Er hat ein romantisches Abendessen gekocht; He cooked a romantic dinner; Er hat ein romantisches Abendessen für seinen Partner gekocht.
+das Telefonbuch;the phone book;Sie hat im Telefonbuch nachgeschlagen.
+der Mantel;the coat;Er hat den Mantel angezogen.
+das Handy;the mobile phone;Das Handy ist ausgeschaltet.
+der Stift;the pen;Sie hat mit dem Stift geschrieben.
+die Treppe;the stairs;Wir haben die Treppe hochgestiegen.
+die Schüssel;the bowl;Er hat die Schüssel gespült.
+der Schuh;the shoe;Er hat den Schuh repariert.
+die Flasche;the bottle;Sie hat die Flasche geöffnet.
+das Papier;the paper;Er hat das Papier zerknüllt.
+die Zahnbürste;the toothbrush;Sie hat die Zahnbürste benutzt.
+der Rucksack;the backpack;Er hat den Rucksack gepackt.
+das Hemd;the shirt;Sie hat das Hemd gebügelt.
+die Hose;the pants;Er hat die Hose geflickt.
+die Gabel;the fork;Sie hat die Gabel poliert.
+der Löffel;the spoon;Er hat den Löffel abgewaschen.
+das Geschirr;the dishware;Sie hat das Geschirr gespült.
+die Schere;the scissors;Die Schere ist stumpf.
+der Kamm;the comb;Er hat den Kamm verlegt.
+das Feuerzeug;the lighter;Sie hat das Feuerzeug gefunden.
+der Spiegel;the mirror;Er hat sich im Spiegel betrachtet.
+die Decke;the ceiling;Die Decke ist weiß gestrichen.
+das Kissen;the pillow;Er hat das Kissen aufgeschüttelt.
+der Vorhang;the curtain;Sie hat den Vorhang zugezogen.
+der Schreibtisch;the desk;Der Schreibtisch ist aus Holz.
+der Stift;the pen;Sie hat den Stift benutzt, um zu schreiben.
+das Blatt;the sheet;Das Blatt Papier ist leer.
+die Glühbirne;the light bulb;Die Glühbirne ist durchgebrannt.
+der Fernseher;the television;Der Fernseher ist kaputt.
+der Lautsprecher;the speaker;Die Lautsprecher sind laut.
+das Radio;the radio;Das Radio ist eingeschaltet.
+der Wecker;the alarm clock;Der Wecker hat geklingelt.
+die Schublade;the drawer;Die Schublade ist voll.
+der Korb;the basket;Der Korb ist leer.
+das Spielzeug;the toy;Das Spielzeug ist kaputt.
+der Topf;the pot;Der Topf ist auf dem Herd.
+die Pfanne;the pan;Die Pfanne ist heiß.
+die Tasse;the cup;Die Tasse ist leer.
+die Untertasse;the saucer;Die Untertasse ist aus Porzellan.
+die Tischdecke;the tablecloth;Die Tischdecke ist weiß.
+der Teppich;the carpet;Der Teppich ist weich.
