@@ -51,7 +51,6 @@ der Garten; the garden; Im Sommer verbringen wir viel Zeit im Garten
 der Kühlschrank; the refrigerator; Die Milch steht im Kühlschrank
 das Geld; the money; Mit Geld kann man viele Dinge kaufen
 der Schlüssel; the key; Hast du den Schlüssel für die Tür?
-Ich gehe spazieren; I'm going for a walk; Ich gehe spazieren, um frische Luft zu schnappen.
 Es regnet; It's raining; Es regnet, also brauche ich meinen Regenschirm.
 Wir fahren ins Kino; We're going to the cinema; Wir fahren ins Kino, um einen Film zu sehen.
 Sie liest ein Buch; She's reading a book; Sie liest ein Buch, während sie auf den Bus wartet.
@@ -63,16 +62,13 @@ Es schneit; It's snowing; Es schneit, also machen wir einen Schneemann.
 Sie malt ein Bild; She's painting a picture; Sie malt ein Bild von ihrer Katze.
 Ich höre Musik; I'm listening to music; Ich höre Musik, um mich zu entspannen.
 Er repariert das Auto; He's fixing the car; Er repariert das Auto, damit es wieder fährt.
-Wir essen Mittagessen; We're having lunch; Wir essen Mittagessen, bevor wir zurück zur Arbeit gehen.
 Sie spielt Fussball; She's playing soccer; Sie spielt Fussball mit ihren Freunden im Park.
-Er schreibt einen Brief; He's writing a letter; Er schreibt einen Brief an seine Grosseltern.
 Sie backt einen Kuchen; She's baking a cake; Sie backt einen Kuchen für die Geburtstagsfeier.
 Wir gehen schwimmen; We're going swimming; Wir gehen schwimmen, um uns abzukühlen.
 Er putzt die Zähne; He's brushing his teeth; Er putzt die Zähne, bevor er ins Bett geht.
 Sie macht ihre Hausaufgaben; She's doing her homework; Sie macht Hausaufgaben, bevor sie fernsieht.
 Wir gehen einkaufen; We're going shopping; Wir gehen einkaufen, um Lebensmittel zu besorgen.
 Es ist heiss; It's hot; Es ist heiss, also trinken wir kalte Limonade.
-Sie fährt Fahrrad; She's riding a bike; Sie fährt Fahrrad zum Fitnessstudio.
 Wir besuchen einen Freund; We're visiting a friend; Wir besuchen einen Freund, der krank ist.
 Er läuft im Park; He's jogging in the park; Er läuft im Park, um fit zu bleiben.
 Sie nimmt eine Dusche; She's taking a shower; Sie nimmt eine Dusche, bevor sie zur Arbeit geht.
@@ -81,8 +77,6 @@ Er repariert das Fahrrad; He's fixing the bike; Er repariert das Fahrrad, damit 
 Sie macht Yoga; She's doing yoga; Sie macht Yoga, um sich zu entspannen.
 Wir essen zu Abend; We're having dinner; Wir essen Abendessen, bevor wir einen Film sehen.
 Er kocht Suppe; He's cooking soup; Er kocht Suppe, um sich aufzuwärmen.
-Sie macht einen Spaziergang; She's taking a walk; Sie macht einen Spaziergang, um frische Luft zu schnappen.
-Wir machen einen Ausflug; We're going on a trip; Wir machen einen Ausflug zum Strand.
 Es ist kalt; It's cold; Es ist kalt, also ziehen wir warme Jacken an.
 Sie schreibt eine E-Mail; She's writing an email; Sie schreibt eine E-Mail an ihren Chef.
 Sie macht Gymnastik; She's doing gymnastics; Sie macht Gymnastik, um sich zu dehnen.
@@ -94,26 +88,19 @@ Er schaut Fernsehen; He's watching TV; Er schaut Fernsehen nach der Arbeit.
 Sie telefoniert mit einem Freund; She's talking on the phone with a friend; Sie telefoniert mit einem Freund über ihre Pläne.
 Wir machen eine Fahrradtour; We're going on a bike ride; Wir machen eine Fahrradtour durch die Landschaft.
 Er schreibt Notizen; He's taking notes; Er schreibt Notizen während des Meetings.
-Sie fährt in den Urlaub; She's going on vacation; Sie fährt in den Urlaub nach Spanien.
 Wir gehen zum Arzt; We're going to the doctor; Wir gehen zum Arzt für eine Routineuntersuchung.
 Er malt ein Bild; He's drawing a picture; Er malt ein Bild von seiner Familie.
-Sie läuft im Park; She's jogging in the park; Sie läuft im Park, um sich fit zu halten.
-Wir machen einen Stadtbummel; We're taking a city stroll; Wir machen einen Stadtbummel und besichtigen die Sehenswürdigkeiten.
 Er sucht nach seinem Schlüssel; He's looking for his keys; Er sucht nach seinem Schlüssel im Haus.
 Sie macht ein Nickerchen; She's taking a nap; Sie macht ein Nickerchen nach dem Mittagessen.
 Wir gehen ins Theater; We're going to the theater; Wir gehen ins Theater, um ein Stück anzusehen.
 Er putzt das Badezimmer; He's cleaning the bathroom; Er putzt das Badezimmer am Wochenende.
 Sie schreibt eine To-Do-Liste; She's writing a to-do list; Sie schreibt eine To-Do-Liste für die Woche.
-Wir machen einen Ausflug in die Berge; We're going on a mountain trip; Wir machen einen Ausflug in die Berge zum Wandern.
 Sie malt ein Bild; She's painting a picture; Sie malt ein Bild von der Landschaft.
 Wir spielen Volleyball am Strand; We're playing volleyball on the beach; Wir spielen Volleyball am Strand, um uns zu amüsieren.
 Er geht zum Friseur; He's going to the hairdresser; Er geht zum Friseur für einen neuen Haarschnitt.
-Sie macht einen Spaziergang im Park; She's taking a walk in the park; Sie macht einen Spaziergang im Park, um die Natur zu genießen.
-Wir machen eine Fahrradtour durch die Stadt; We're going on a bike tour through the city; Wir machen eine Fahrradtour durch die Stadt und besichtigen die Sehenswürdigkeiten.
 Er macht Yogaübungen; He's doing yoga exercises; Er macht Yogaübungen für Flexibilität und Entspannung.
 Sie hört einem Podcast zu; She's listening to a podcast; Sie hört einem Podcast zu, während sie putzt.
 Wir machen eine Bootsfahrt; We're going on a boat trip; Wir machen eine Bootsfahrt auf dem See.
-Er kocht ein romantisches Abendessen; He's cooking a romantic dinner; Er kocht ein romantisches Abendessen für seinen Partner.
 Sie hat Gymnastik gemacht; She did gymnastics; Sie hat Gymnastik gemacht, um sich zu dehnen.
 Wir haben Kekse gebacken; We baked cookies; Wir haben Kekse für die Weihnachtsfeier gebacken.
 Er hat ein Buch gelesen; He read a book; Er hat ein Buch im Park gelesen.
@@ -121,7 +108,6 @@ Sie haben Musik gehört; They listened to music; Sie haben Musik während der Au
 Wir haben Picknick gemacht; We had a picnic; Wir haben Picknick im Park gemacht.
 Er hat Fernsehen geschaut; He watched TV; Er hat Fernsehen nach der Arbeit geschaut.
 Sie hat mit einem Freund telefoniert; She talked on the phone with a friend; Sie hat mit einem Freund über ihre Pläne telefoniert.
-Wir haben eine Fahrradtour gemacht; We went on a bike ride; Wir haben eine Fahrradtour durch die Landschaft gemacht.
 Er hat Notizen geschrieben; He took notes; Er hat Notizen während des Meetings geschrieben.
 Sie ist in den Urlaub gefahren; She went on vacation; Sie ist in den Urlaub nach Spanien gefahren.
 Wir sind zum Arzt gegangen; We went to the doctor; Wir sind zum Arzt für eine Routineuntersuchung gegangen.
@@ -132,7 +118,6 @@ Er hat nach seinem Schlüssel gesucht; He looked for his keys; Er hat nach seine
 Sie hat ein Nickerchen gemacht; She took a nap; Sie hat ein Nickerchen nach dem Mittagessen gemacht.
 Wir sind ins Theater gegangen; We went to the theater; Wir sind ins Theater gegangen, um ein Stück anzusehen.
 Er hat das Badezimmer geputzt; He cleaned the bathroom; Er hat das Badezimmer am Wochenende geputzt.
-Sie hat eine To-Do-Liste geschrieben; She wrote a to-do list; Sie hat eine To-Do-Liste für die Woche geschrieben.
 Wir haben einen Ausflug in die Berge gemacht; We went on a mountain trip; Wir haben einen Ausflug in die Berge zum Wandern gemacht.
 Er hat ein Feuer im Kamin gemacht; He made a fire in the fireplace; Er hat ein Feuer im Kamin gemacht, um das Wohnzimmer zu wärmen.
 Sie hat ein Bild gemalt; She painted a picture; Sie hat ein Bild von der Landschaft gemalt.
@@ -163,8 +148,8 @@ das Geschirr;the dishware;Sie hat das Geschirr gespült.
 die Schere;the scissors;Die Schere ist stumpf.
 der Kamm;the comb;Er hat den Kamm verlegt.
 das Feuerzeug;the lighter;Sie hat das Feuerzeug gefunden.
-der Spiegel;the mirror;Er hat sich im Spiegel betrachtet.
-die Decke;the ceiling;Die Decke ist weiß gestrichen.
+der Spiegel;the mirror;Er hat sich im Spiegel betrachtet.  
+die Decke;the ceiling;Die Decke ist weiß gestrichen.  
 das Kissen;the pillow;Er hat das Kissen aufgeschüttelt.
 der Vorhang;the curtain;Sie hat den Vorhang zugezogen.
 der Schreibtisch;the desk;Der Schreibtisch ist aus Holz.

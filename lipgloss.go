@@ -37,6 +37,5 @@ var correct = lipgloss.NewStyle().
 
 var defaultAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EEEEEE"))
 var correctAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#00EE00"))
-var warningAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EEEE00"))
 var wrongAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EE0000"))
 var exampleStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#0000EE"))
