@@ -14,26 +14,25 @@ func GenerateReport(words map[string]*Word) {
 	var counter int
 	for _, word := range words {
 		counter++
-		if word.wrongCounter > 2 {
+
+		if word.wrongCounter == 0 {
 			t.AppendRow(table.Row{
-				wrongAnswerStyle.Render(strconv.Itoa(counter)),
-				wrongAnswerStyle.Render(word.translation),
-				wrongAnswerStyle.Render(word.text),
-				wrongAnswerStyle.Render(strconv.Itoa(word.wrongCounter))})
-		}
-		if word.wrongCounter == 2 {
-			t.AppendRow(table.Row{
-				warningAnswerStyle.Render(strconv.Itoa(counter)),
-				warningAnswerStyle.Render(word.translation),
-				warningAnswerStyle.Render(word.text),
-				warningAnswerStyle.Render(strconv.Itoa(word.wrongCounter))})
-		}
-		if word.wrongCounter < 2 {
+				defaultAnswerStyle.Render(strconv.Itoa(counter)),
+				defaultAnswerStyle.Render(word.translation),
+				defaultAnswerStyle.Render(word.text),
+				defaultAnswerStyle.Render(strconv.Itoa(word.wrongCounter))})
+		} else if word.guessed {
 			t.AppendRow(table.Row{
 				correctAnswerStyle.Render(strconv.Itoa(counter)),
 				correctAnswerStyle.Render(word.translation),
 				correctAnswerStyle.Render(word.text),
 				correctAnswerStyle.Render(strconv.Itoa(word.wrongCounter))})
+		} else {
+			t.AppendRow(table.Row{
+				wrongAnswerStyle.Render(strconv.Itoa(counter)),
+				wrongAnswerStyle.Render(word.translation),
+				wrongAnswerStyle.Render(word.text),
+				wrongAnswerStyle.Render(strconv.Itoa(word.wrongCounter))})
 		}
 		t.AppendSeparator()
 	}

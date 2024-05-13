@@ -69,7 +69,7 @@ Er schreibt einen Brief; He's writing a letter; Er schreibt einen Brief an seine
 Sie backt einen Kuchen; She's baking a cake; Sie backt einen Kuchen für die Geburtstagsfeier.
 Wir gehen schwimmen; We're going swimming; Wir gehen schwimmen, um uns abzukühlen.
 Er putzt die Zähne; He's brushing his teeth; Er putzt die Zähne, bevor er ins Bett geht.
-Sie macht Hausaufgaben; She's doing her homework; Sie macht Hausaufgaben, bevor sie fernsieht.
+Sie macht ihre Hausaufgaben; She's doing her homework; Sie macht Hausaufgaben, bevor sie fernsieht.
 Wir gehen einkaufen; We're going shopping; Wir gehen einkaufen, um Lebensmittel zu besorgen.
 Es ist heiss; It's hot; Es ist heiss, also trinken wir kalte Limonade.
 Sie fährt Fahrrad; She's riding a bike; Sie fährt Fahrrad zum Fitnessstudio.
@@ -79,7 +79,7 @@ Sie nimmt eine Dusche; She's taking a shower; Sie nimmt eine Dusche, bevor sie z
 Wir spielen Karten; We're playing cards; Wir spielen Karten, um Zeit miteinander zu verbringen.
 Er repariert das Fahrrad; He's fixing the bike; Er repariert das Fahrrad, damit es wieder fährt.
 Sie macht Yoga; She's doing yoga; Sie macht Yoga, um sich zu entspannen.
-Wir essen Abendessen; We're having dinner; Wir essen Abendessen, bevor wir einen Film sehen.
+Wir essen zu Abend; We're having dinner; Wir essen Abendessen, bevor wir einen Film sehen.
 Er kocht Suppe; He's cooking soup; Er kocht Suppe, um sich aufzuwärmen.
 Sie macht einen Spaziergang; She's taking a walk; Sie macht einen Spaziergang, um frische Luft zu schnappen.
 Wir machen einen Ausflug; We're going on a trip; Wir machen einen Ausflug zum Strand.
@@ -105,7 +105,6 @@ Wir gehen ins Theater; We're going to the theater; Wir gehen ins Theater, um ein
 Er putzt das Badezimmer; He's cleaning the bathroom; Er putzt das Badezimmer am Wochenende.
 Sie schreibt eine To-Do-Liste; She's writing a to-do list; Sie schreibt eine To-Do-Liste für die Woche.
 Wir machen einen Ausflug in die Berge; We're going on a mountain trip; Wir machen einen Ausflug in die Berge zum Wandern.
-Er macht ein Feuer im Kamin; He's making a fire in the fireplace; Er macht ein Feuer im Kamin, um das Wohnzimmer zu wärmen.
 Sie malt ein Bild; She's painting a picture; Sie malt ein Bild von der Landschaft.
 Wir spielen Volleyball am Strand; We're playing volleyball on the beach; Wir spielen Volleyball am Strand, um uns zu amüsieren.
 Er geht zum Friseur; He's going to the hairdresser; Er geht zum Friseur für einen neuen Haarschnitt.
@@ -185,3 +184,27 @@ die Tasse;the cup;Die Tasse ist leer.
 die Untertasse;the saucer;Die Untertasse ist aus Porzellan.
 die Tischdecke;the tablecloth;Die Tischdecke ist weiß.
 der Teppich;the carpet;Der Teppich ist weich.
+das Poster;the poster;Das Poster hängt an der Wand.
+die Wand;the wall;Die Wand ist weiß gestrichen.
+der Boden;the floor;Der Boden ist aus Holz.
+der Bilderrahmen;the picture frame;Der Bilderrahmen ist aus Holz.
+das Regal;the shelf;Das Regal ist voller Bücher.
+die Vase;the vase;Die Vase steht auf dem Tisch.
+der Blumentopf;the flowerpot;Der Blumentopf steht auf dem Fensterbrett.
+der Teppich;the rug;Der Teppich ist gemustert.
+das Gemälde;the painting;Das Gemälde hängt über dem Sofa.
+die Stehlampe;the floor lamp;Die Stehlampe steht neben dem Sofa.
+der Kronleuchter;the chandelier;Der Kronleuchter hängt im Esszimmer.
+die Kerze;the candle;Die Kerze brennt auf dem Tisch.
+die Deckenlampe;the ceiling lamp;Die Deckenlampe ist defekt.
+die Hängelampe;the pendant lamp;Die Hängelampe ist modern.
+die Schublade;the drawer;Die Schublade ist voller Kleinkram.
+die Kommode;the chest of drawers;Die Kommode ist aus Eiche.
+der Kleiderbügel;the clothes hanger;Der Kleiderbügel ist aus Metall.
+der Fernsehschrank;the TV stand;Der Fernsehschrank ist aus Holz.
+das Bücherregal;the bookcase;Das Bücherregal ist voller Bücher.
+das Sideboard;the sideboard;Das Sideboard ist aus Glas.
+die Couch;the couch;Die Couch ist sehr bequem.
+der Sessel;the armchair;Der Sessel ist mit Stoff bezogen.
+die Decke;the blanket;Die Decke ist kuschelig.
+das Kissen;the cushion;Das Kissen ist weich.

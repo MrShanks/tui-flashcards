@@ -17,6 +17,7 @@ type Word struct {
 	translation  string
 	example      string
 	wrongCounter int
+	guessed      bool
 }
 
 func NewWord(text, translation, example string) *Word {
@@ -24,7 +25,8 @@ func NewWord(text, translation, example string) *Word {
 		text:         text,
 		translation:  translation,
 		example:      example,
-		wrongCounter: 1,
+		wrongCounter: 0,
+		guessed:      false,
 	}
 }
 

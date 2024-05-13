@@ -9,11 +9,10 @@ import (
 
 var score, counter int
 var wrongWords = make(map[string]*Word)
+var exit = false
 
 func translateWords(wordMap map[string]*Word, scanner *bufio.Scanner, repeat bool) {
 	for text, word := range wordMap {
-		translation := word.translation
-		example := word.example
 		if !repeat {
 			counter++
 		}
@@ -28,28 +27,33 @@ func translateWords(wordMap map[string]*Word, scanner *bufio.Scanner, repeat boo
 		scanner.Scan()
 		input := scanner.Text()
 		args := strings.Fields(input)
-
-		if translation != input || len(args) == 0 {
+		if input == "stop" {
+			exit = true
+			return
+		}
+		if word.translation != input || len(args) == 0 {
 			clearScreen()
 			word.wrongCounter++
 			wrongWords[text] = word
 			fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", text, input)))
-			fmt.Println("Expected: ", correctAnswerStyle.Render(translation))
-			printExample(example)
+			fmt.Println("Expected: ", correctAnswerStyle.Render(word.translation))
+			printExample(word.example)
 			fmt.Println("Press enter to continue")
 			scanner.Scan()
 			clearScreen()
 			continue
 		}
 
-		if translation == input {
+		if word.translation == input {
 			clearScreen()
+			word.wrongCounter++
+			word.guessed = true
 			if !repeat {
 				score++
 			}
 			fmt.Println(correct.Render(fmt.Sprintf("%s : %s", text, input)))
 			fmt.Println("Great that was the right answer")
-			printExample(example)
+			printExample(word.example)
 			fmt.Println("Press enter to continue")
 			scanner.Scan()
 			clearScreen()
@@ -78,7 +82,7 @@ func NewGame(iterations int) {
 
 	// start the second loop to answer the words you didn't get right in the first run
 	for {
-		if len(wrongWords) == 0 {
+		if len(wrongWords) == 0 || exit {
 			break
 		}
 		translateWords(wrongWords, scanner, true)
