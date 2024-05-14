@@ -1,4 +1,4 @@
-package main
+package game
 
 import "github.com/charmbracelet/lipgloss"
 
@@ -35,7 +35,17 @@ var correct = lipgloss.NewStyle().
 	Align(lipgloss.Center).
 	Width(22)
 
+// defaultAnswerStyle is rendered White
 var defaultAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EEEEEE"))
+
+// correctAnswerStyle is rendered Green
 var correctAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#00EE00"))
+
+// warningAnswerStyle is rendered Orange
+var warningAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EEEE00"))
+
+// wrongAnswerStyle is rendered Red
 var wrongAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EE0000"))
+
+// exampleStyle is rendered Blue
 var exampleStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#0000EE"))

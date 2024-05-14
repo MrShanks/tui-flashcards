@@ -1,4 +1,4 @@
-package main
+package game
 
 import (
 	"bufio"
@@ -7,11 +7,16 @@ import (
 	"strings"
 )
 
-var score, counter int
-var wrongWords = make(map[string]*Word)
-var exit = false
-var iterations = 10
+var (
+	score, counter int
+	wrongWords     = make(map[string]*Word)
+	exit           = false
+	iterations     = 10
+)
 
+// GuessTheWord starts the first loop of words, score is updated only during this run.
+// Not guessed words are stored in the wrongWords map that is later used in the second
+// loop
 func GuessTheWord(wordMap map[string]*Word, scanner *bufio.Scanner) {
 	for text, word := range wordMap {
 		clearScreen()
@@ -27,15 +32,15 @@ func GuessTheWord(wordMap map[string]*Word, scanner *bufio.Scanner) {
 			return
 		}
 
-		if word.translation != input || len(args) == 0 {
+		if word.Translation != input || len(args) == 0 {
 			clearScreen()
 
-			word.wrongCounter++
+			word.WrongCounter++
 			wrongWords[text] = word
 
 			fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", text, input)))
-			fmt.Println("Expected: ", correctAnswerStyle.Render(word.translation))
-			printExample(word.example)
+			fmt.Println("Expected: ", correctAnswerStyle.Render(word.Translation))
+			printExample(word.Example)
 			fmt.Println("Press enter to continue")
 
 			scanner.Scan()
@@ -44,16 +49,16 @@ func GuessTheWord(wordMap map[string]*Word, scanner *bufio.Scanner) {
 			continue
 		}
 
-		if word.translation == input {
+		if word.Translation == input {
 			clearScreen()
 
-			word.wrongCounter++
-			word.guessed = true
+			word.WrongCounter++
+			word.Guessed = true
 			score++
 
 			fmt.Println(correct.Render(fmt.Sprintf("%s : %s", text, input)))
 			fmt.Println("Great that was the right answer")
-			printExample(word.example)
+			printExample(word.Example)
 			fmt.Println("Press enter to continue")
 
 			scanner.Scan()
@@ -62,6 +67,9 @@ func GuessTheWord(wordMap map[string]*Word, scanner *bufio.Scanner) {
 		}
 	}
 }
+
+// GuessTheWrongWords starts the second loop of words, it goes on until all the words
+// have been guessed, the score is no longer updated
 func GuessTheWrongWords(wordMap map[string]*Word, scanner *bufio.Scanner) {
 	for text, word := range wordMap {
 		clearScreen()
@@ -77,15 +85,15 @@ func GuessTheWrongWords(wordMap map[string]*Word, scanner *bufio.Scanner) {
 			return
 		}
 
-		if word.translation != input || len(args) == 0 {
+		if word.Translation != input || len(args) == 0 {
 			clearScreen()
 
-			word.wrongCounter++
+			word.WrongCounter++
 			wrongWords[text] = word
 
 			fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", text, input)))
-			fmt.Println("Expected: ", correctAnswerStyle.Render(word.translation))
-			printExample(word.example)
+			fmt.Println("Expected: ", correctAnswerStyle.Render(word.Translation))
+			printExample(word.Example)
 			fmt.Println("Press enter to continue")
 
 			scanner.Scan()
@@ -94,15 +102,15 @@ func GuessTheWrongWords(wordMap map[string]*Word, scanner *bufio.Scanner) {
 			continue
 		}
 
-		if word.translation == input {
+		if word.Translation == input {
 			clearScreen()
 
-			word.wrongCounter++
-			word.guessed = true
+			word.WrongCounter++
+			word.Guessed = true
 
 			fmt.Println(correct.Render(fmt.Sprintf("%s : %s", text, input)))
 			fmt.Println("Great that was the right answer")
-			printExample(word.example)
+			printExample(word.Example)
 			fmt.Println("Press enter to continue")
 
 			scanner.Scan()
@@ -114,6 +122,7 @@ func GuessTheWrongWords(wordMap map[string]*Word, scanner *bufio.Scanner) {
 	}
 }
 
+// NewGame starts the guessing word game and resets score and counter at the end
 func NewGame(iterations int) {
 	scanner := bufio.NewScanner(os.Stdin)
 	wordMap := pickRandomWords(iterations)
@@ -147,9 +156,11 @@ func NewGame(iterations int) {
 		fmt.Printf("Don't forget to come back tomorrow!\n")
 	}
 
+	score = 0
+	counter = 0
+	exit = false
+
 	fmt.Println("Press enter to see the report")
 	scanner.Scan()
 	GenerateReport(wordMap)
-	score = 0
-	counter = 0
 }

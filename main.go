@@ -1,5 +1,7 @@
 package main
 
+import "github.com/MrShanks/tui-flashcards/game"
+
 func main() {
-	Repl()
+	game.Repl()
 }

@@ -1,4 +1,4 @@
-package main
+package game
 
 type command struct {
 	text     string
@@ -6,6 +6,7 @@ type command struct {
 	callback func()
 }
 
+// getCommands returns a map of commands
 func getCommands() map[string]command {
 	return map[string]command{
 		"help": {
