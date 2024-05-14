@@ -13,13 +13,14 @@ import (
 var wordFile = "new_words.txt"
 
 type Word struct {
-	text         string
-	translation  string
-	example      string
-	wrongCounter int
-	guessed      bool
+	text         string // English word
+	translation  string // German translation
+	example      string // Real word example
+	wrongCounter int    // Number of Attempt
+	guessed      bool   // When guessed is true
 }
 
+// NewWord initialize the fields of a newly created word
 func NewWord(text, translation, example string) *Word {
 	return &Word{
 		text:         text,
@@ -30,6 +31,7 @@ func NewWord(text, translation, example string) *Word {
 	}
 }
 
+// AddWordToFile prompts the user to insert a new word in the dictionary
 func AddWordToFile() error {
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -63,6 +65,8 @@ func AddWordToFile() error {
 	return nil
 }
 
+// pickRandomWords shuffles the words in the array and then creates a map of *Words
+// with the first n elements
 func pickRandomWords(n int) map[string]*Word {
 	words, err := LoadWords()
 	if err != nil {
@@ -72,17 +76,17 @@ func pickRandomWords(n int) map[string]*Word {
 	wordMap := make(map[string]*Word)
 	copyWords := make([]*Word, len(words))
 	copy(copyWords, words)
-	rand.Shuffle(len(copyWords), func(i, j int) {
-		copyWords[i], copyWords[j] = copyWords[j], copyWords[i]
-	})
+	rand.Shuffle(
+		len(copyWords), func(i, j int) {
+			copyWords[i], copyWords[j] = copyWords[j], copyWords[i]
+		})
 	for _, word := range copyWords[:n] {
 		wordMap[word.text] = word
 	}
 	return wordMap
 }
 
-// LoadWords reads words from the words.txt file and creates a slice of words
-// that are stored in memory
+// LoadWords reads words from the new_words.txt file and creates a slice of words
 func LoadWords() ([]*Word, error) {
 	file, err := os.Open(wordFile)
 	if err != nil {
@@ -116,6 +120,8 @@ func LoadWords() ([]*Word, error) {
 	return words, nil
 }
 
+// ListWordsFromFile prints all the available words in the dictionary
+// as a table
 func ListWordsFromFile() {
 	words, err := LoadWords()
 	if err != nil {

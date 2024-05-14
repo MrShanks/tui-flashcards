@@ -7,14 +7,17 @@ import (
 	"github.com/jedib0t/go-pretty/v6/table"
 )
 
+// GenerateReport creates a table with the stats of the game, Correct answers
+// are print in Green, wrong answers are print in Red, not answered words,
+// are print in grey
 func GenerateReport(words map[string]*Word) {
+	var counter int
+
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
 	t.AppendHeader(table.Row{"#", "Translation", "Word", "Attempts"})
-	var counter int
 	for _, word := range words {
 		counter++
-
 		if word.wrongCounter == 0 {
 			t.AppendRow(table.Row{
 				defaultAnswerStyle.Render(strconv.Itoa(counter)),

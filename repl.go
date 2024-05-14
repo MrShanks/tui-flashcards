@@ -6,6 +6,8 @@ import (
 	"os"
 )
 
+// Repl is an infinite loop that waits for user input, it execute command passed
+// by the user
 func Repl() {
 	scanner := bufio.NewScanner(os.Stdin)
 
