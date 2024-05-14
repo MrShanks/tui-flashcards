@@ -41,6 +41,9 @@ var defaultAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EEEEEE"
 // correctAnswerStyle is rendered Green
 var correctAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#00EE00"))
 
+// warningAnswerStyle is rendered Orange
+var warningAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EEEE00"))
+
 // wrongAnswerStyle is rendered Red
 var wrongAnswerStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#EE0000"))
 
