@@ -36,6 +36,7 @@ func GuessTheWord(wordMap map[string]*Word, scanner *bufio.Scanner) {
 			clearScreen()
 
 			word.WrongCounter++
+			wrongWords[text] = word
 
 			fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", text, input)))
 			fmt.Println("Expected: ", correctAnswerStyle.Render(word.Translation))
@@ -157,6 +158,7 @@ func NewGame(iterations int) {
 
 	score = 0
 	counter = 0
+	exit = false
 
 	fmt.Println("Press enter to see the report")
 	scanner.Scan()
