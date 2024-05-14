@@ -4,7 +4,10 @@ go 1.21.7
 
 require (
 	github.com/charmbracelet/lipgloss v0.10.0
+	github.com/google/uuid v1.6.0
 	github.com/jedib0t/go-pretty/v6 v6.5.9
+	github.com/joho/godotenv v1.5.1
+	github.com/lib/pq v1.10.9
 )
 
 require (

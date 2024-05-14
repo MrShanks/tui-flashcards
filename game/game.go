@@ -155,6 +155,7 @@ func NewGame(iterations int) {
 		fmt.Println(normal.Render(fmt.Sprintf("%d/%d", score, len(wordMap))))
 		fmt.Printf("Don't forget to come back tomorrow!\n")
 	}
+	registerStats(int32(score))
 
 	score = 0
 	counter = 0
