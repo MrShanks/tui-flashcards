@@ -1,4 +1,4 @@
-package main
+package game
 
 import (
 	"bufio"
@@ -13,21 +13,21 @@ import (
 var wordFile = "new_words.txt"
 
 type Word struct {
-	text         string // English word
-	translation  string // German translation
-	example      string // Real word example
-	wrongCounter int    // Number of Attempt
-	guessed      bool   // When guessed is true
+	Text         string // English word
+	Translation  string // German translation
+	Example      string // Real word example
+	WrongCounter int    // Number of Attempt
+	Guessed      bool   // When guessed is true
 }
 
 // NewWord initialize the fields of a newly created word
 func NewWord(text, translation, example string) *Word {
 	return &Word{
-		text:         text,
-		translation:  translation,
-		example:      example,
-		wrongCounter: 0,
-		guessed:      false,
+		Text:         text,
+		Translation:  translation,
+		Example:      example,
+		WrongCounter: 0,
+		Guessed:      false,
 	}
 }
 
@@ -81,7 +81,7 @@ func pickRandomWords(n int) map[string]*Word {
 			copyWords[i], copyWords[j] = copyWords[j], copyWords[i]
 		})
 	for _, word := range copyWords[:n] {
-		wordMap[word.text] = word
+		wordMap[word.Text] = word
 	}
 	return wordMap
 }
@@ -134,7 +134,7 @@ func ListWordsFromFile() {
 	t.AppendHeader(table.Row{"#", "German", "English", "Example"})
 	for i, word := range words {
 		i++
-		t.AppendRow(table.Row{i, word.translation, word.text, word.example})
+		t.AppendRow(table.Row{i, word.Translation, word.Text, word.Example})
 		t.AppendSeparator()
 	}
 	t.SetStyle(table.StyleRounded)

@@ -1,4 +1,4 @@
-package main
+package game
 
 import (
 	"bufio"
@@ -32,14 +32,14 @@ func GuessTheWord(wordMap map[string]*Word, scanner *bufio.Scanner) {
 			return
 		}
 
-		if word.translation != input || len(args) == 0 {
+		if word.Translation != input || len(args) == 0 {
 			clearScreen()
 
-			word.wrongCounter++
+			word.WrongCounter++
 
 			fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", text, input)))
-			fmt.Println("Expected: ", correctAnswerStyle.Render(word.translation))
-			printExample(word.example)
+			fmt.Println("Expected: ", correctAnswerStyle.Render(word.Translation))
+			printExample(word.Example)
 			fmt.Println("Press enter to continue")
 
 			scanner.Scan()
@@ -48,16 +48,16 @@ func GuessTheWord(wordMap map[string]*Word, scanner *bufio.Scanner) {
 			continue
 		}
 
-		if word.translation == input {
+		if word.Translation == input {
 			clearScreen()
 
-			word.wrongCounter++
-			word.guessed = true
+			word.WrongCounter++
+			word.Guessed = true
 			score++
 
 			fmt.Println(correct.Render(fmt.Sprintf("%s : %s", text, input)))
 			fmt.Println("Great that was the right answer")
-			printExample(word.example)
+			printExample(word.Example)
 			fmt.Println("Press enter to continue")
 
 			scanner.Scan()
@@ -84,15 +84,15 @@ func GuessTheWrongWords(wordMap map[string]*Word, scanner *bufio.Scanner) {
 			return
 		}
 
-		if word.translation != input || len(args) == 0 {
+		if word.Translation != input || len(args) == 0 {
 			clearScreen()
 
-			word.wrongCounter++
+			word.WrongCounter++
 			wrongWords[text] = word
 
 			fmt.Println(wrong.Render(fmt.Sprintf("%s : %s", text, input)))
-			fmt.Println("Expected: ", correctAnswerStyle.Render(word.translation))
-			printExample(word.example)
+			fmt.Println("Expected: ", correctAnswerStyle.Render(word.Translation))
+			printExample(word.Example)
 			fmt.Println("Press enter to continue")
 
 			scanner.Scan()
@@ -101,15 +101,15 @@ func GuessTheWrongWords(wordMap map[string]*Word, scanner *bufio.Scanner) {
 			continue
 		}
 
-		if word.translation == input {
+		if word.Translation == input {
 			clearScreen()
 
-			word.wrongCounter++
-			word.guessed = true
+			word.WrongCounter++
+			word.Guessed = true
 
 			fmt.Println(correct.Render(fmt.Sprintf("%s : %s", text, input)))
 			fmt.Println("Great that was the right answer")
-			printExample(word.example)
+			printExample(word.Example)
 			fmt.Println("Press enter to continue")
 
 			scanner.Scan()

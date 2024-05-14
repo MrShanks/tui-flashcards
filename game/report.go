@@ -1,4 +1,4 @@
-package main
+package game
 
 import (
 	"os"
@@ -18,24 +18,24 @@ func GenerateReport(words map[string]*Word) {
 	t.AppendHeader(table.Row{"#", "Translation", "Word", "Attempts"})
 	for _, word := range words {
 		counter++
-		if word.wrongCounter == 0 {
+		if word.WrongCounter == 0 {
 			t.AppendRow(table.Row{
 				defaultAnswerStyle.Render(strconv.Itoa(counter)),
-				defaultAnswerStyle.Render(word.translation),
-				defaultAnswerStyle.Render(word.text),
-				defaultAnswerStyle.Render(strconv.Itoa(word.wrongCounter))})
-		} else if word.guessed {
+				defaultAnswerStyle.Render(word.Translation),
+				defaultAnswerStyle.Render(word.Text),
+				defaultAnswerStyle.Render(strconv.Itoa(word.WrongCounter))})
+		} else if word.Guessed {
 			t.AppendRow(table.Row{
 				correctAnswerStyle.Render(strconv.Itoa(counter)),
-				correctAnswerStyle.Render(word.translation),
-				correctAnswerStyle.Render(word.text),
-				correctAnswerStyle.Render(strconv.Itoa(word.wrongCounter))})
+				correctAnswerStyle.Render(word.Translation),
+				correctAnswerStyle.Render(word.Text),
+				correctAnswerStyle.Render(strconv.Itoa(word.WrongCounter))})
 		} else {
 			t.AppendRow(table.Row{
 				wrongAnswerStyle.Render(strconv.Itoa(counter)),
-				wrongAnswerStyle.Render(word.translation),
-				wrongAnswerStyle.Render(word.text),
-				wrongAnswerStyle.Render(strconv.Itoa(word.wrongCounter))})
+				wrongAnswerStyle.Render(word.Translation),
+				wrongAnswerStyle.Render(word.Text),
+				wrongAnswerStyle.Render(strconv.Itoa(word.WrongCounter))})
 		}
 		t.AppendSeparator()
 	}
