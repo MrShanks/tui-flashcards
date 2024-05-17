@@ -41,3 +41,48 @@ func (q *Queries) CreateStat(ctx context.Context, arg CreateStatParams) (Stat, e
 	)
 	return i, err
 }
+
+const getMaxScore = `-- name: GetMaxScore :one
+SELECT MAX(score) 
+FROM stats
+`
+
+func (q *Queries) GetMaxScore(ctx context.Context) (interface{}, error) {
+	row := q.db.QueryRowContext(ctx, getMaxScore)
+	var max interface{}
+	err := row.Scan(&max)
+	return max, err
+}
+
+const getStats = `-- name: GetStats :many
+SELECT id, created_at, updated_at, score FROM stats
+ORDER BY created_at
+`
+
+func (q *Queries) GetStats(ctx context.Context) ([]Stat, error) {
+	rows, err := q.db.QueryContext(ctx, getStats)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Stat
+	for rows.Next() {
+		var i Stat
+		if err := rows.Scan(
+			&i.ID,
+			&i.CreatedAt,
+			&i.UpdatedAt,
+			&i.Score,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}

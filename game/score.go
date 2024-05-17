@@ -1,9 +1,15 @@
 package game
 
 import (
+	"context"
+	"database/sql"
 	"fmt"
+	"log"
 	"os"
 	"strconv"
+
+	"github.com/MrShanks/tui-flashcards/internal/database"
+	"github.com/joho/godotenv"
 )
 
 // UpdateBestScore overrides the bestscore in the bestScore.txt file and renders
@@ -35,4 +41,27 @@ func ReadBestScore(filename string) (int, error) {
 	}
 
 	return bestScore, nil
+}
+
+func GetMaxScore() {
+	ctx := context.Background()
+
+	godotenv.Load()
+	dbURL := os.Getenv("DB_URL")
+	if dbURL == "" {
+		log.Fatal("dbURL is empty, please double check the env conf")
+	}
+
+	conn, err := sql.Open("postgres", dbURL)
+	if err != nil {
+		log.Fatal("Can't connect to the database: ", err)
+	}
+	defer conn.Close()
+
+	queries := database.New(conn)
+	maxScore, err := queries.GetMaxScore(ctx)
+	if err != nil {
+		log.Fatal("Can't retrieve max score from database: ", err)
+	}
+	fmt.Printf("Best Score: %d\n", maxScore)
 }

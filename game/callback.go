@@ -34,6 +34,16 @@ func callbackList() {
 	ListWordsFromFile()
 }
 
+// callbackStats lists all scores store in the database
+func callbackStats() {
+	GetAllStats()
+}
+
+// callbackMaxScore retrives the best score so far from the database
+func callbackMaxScore() {
+	GetMaxScore()
+}
+
 // callbackDefault prints the default error message
 func callbackDefault() {
 	fmt.Println("Invalid command, type help if you are stuck!")

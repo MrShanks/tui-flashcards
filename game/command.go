@@ -34,5 +34,15 @@ func getCommands() map[string]command {
 			desc:     "List all words in the database",
 			callback: callbackList,
 		},
+		"stats": {
+			text:     "stats",
+			desc:     "List all of your scores",
+			callback: callbackStats,
+		},
+		"max": {
+			text:     "max",
+			desc:     "get back the max score",
+			callback: callbackMaxScore,
+		},
 	}
 }

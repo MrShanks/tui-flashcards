@@ -155,13 +155,19 @@ func NewGame(iterations int) {
 		fmt.Println(normal.Render(fmt.Sprintf("%d/%d", score, len(wordMap))))
 		fmt.Printf("Don't forget to come back tomorrow!\n")
 	}
+
 	registerStats(int32(score))
 
-	score = 0
-	counter = 0
-	exit = false
+	Reset()
 
 	fmt.Println("Press enter to see the report")
 	scanner.Scan()
 	GenerateReport(wordMap)
+}
+
+func Reset() {
+	score = 0
+	counter = 0
+	exit = false
+	wrongWords = make(map[string]*Word)
 }
