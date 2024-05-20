@@ -125,7 +125,7 @@ func GuessTheWrongWords(wordMap map[string]*Word, scanner *bufio.Scanner) {
 // NewGame starts the guessing word game and resets score and counter at the end
 func NewGame(iterations int) {
 	scanner := bufio.NewScanner(os.Stdin)
-	wordMap := pickRandomWords(iterations)
+	wordMap := PickRandomWords(iterations)
 
 	bestScore, err := ReadBestScore("bestScore.txt")
 	if err != nil {

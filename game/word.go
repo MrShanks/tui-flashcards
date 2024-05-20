@@ -67,7 +67,7 @@ func AddWordToFile() error {
 
 // pickRandomWords shuffles the words in the array and then creates a map of *Words
 // with the first n elements
-func pickRandomWords(n int) map[string]*Word {
+func PickRandomWords(n int) map[string]*Word {
 	words, err := LoadWords()
 	if err != nil {
 		fmt.Println(err)

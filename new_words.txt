@@ -65,7 +65,7 @@ Er repariert das Auto; He's fixing the car; Er repariert das Auto, damit es wied
 Sie spielt Fussball; She's playing soccer; Sie spielt Fussball mit ihren Freunden im Park.
 Sie backt einen Kuchen; She's baking a cake; Sie backt einen Kuchen für die Geburtstagsfeier.
 Wir gehen schwimmen; We're going swimming; Wir gehen schwimmen, um uns abzukühlen.
-Er putzt die Zähne; He's brushing his teeth; Er putzt die Zähne, bevor er ins Bett geht.
+Er putzt sich die Zähne; He's brushing his teeth; Er putzt die Zähne, bevor er ins Bett geht.
 Sie macht ihre Hausaufgaben; She's doing her homework; Sie macht Hausaufgaben, bevor sie fernsieht.
 Wir gehen einkaufen; We're going shopping; Wir gehen einkaufen, um Lebensmittel zu besorgen.
 Es ist heiss; It's hot; Es ist heiss, also trinken wir kalte Limonade.
