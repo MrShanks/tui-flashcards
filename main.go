@@ -5,26 +5,29 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/MrShanks/tui-flashcards/game"
 	_ "github.com/lib/pq"
 )
 
-var words []*game.Word
-var counter int
-var score = 0
-var iterations = 10
+var (
+	words      []*game.Word
+	counter    int
+	score      = 0
+	iterations = 10
+)
 
-func homepage(w http.ResponseWriter, r *http.Request) {
+func StartGame(w http.ResponseWriter, r *http.Request) {
 	homepage, err := template.ParseFiles("templates/index.html")
 	tmpl := template.Must(homepage, err)
 	if len(words) == 0 {
-		restart(w, r)
+		Restart(w, r)
 	}
 	tmpl.Execute(w, words[counter].Text)
 }
 
-func restart(w http.ResponseWriter, r *http.Request) {
+func Restart(w http.ResponseWriter, r *http.Request) {
 	words = game.PickRandomWordsSlice(iterations)
 	counter = 0
 	homepage, err := template.ParseFiles("templates/index.html")
@@ -33,7 +36,7 @@ func restart(w http.ResponseWriter, r *http.Request) {
 	score = 0
 }
 
-func next(w http.ResponseWriter, r *http.Request) {
+func Next(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		log.Printf("%s method is not allowed", r.Method)
 		return
@@ -53,7 +56,7 @@ func next(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, words[counter].Text)
 }
 
-func prev(w http.ResponseWriter, r *http.Request) {
+func Prev(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		log.Printf("%s method is not allowed", r.Method)
 		return
@@ -73,7 +76,7 @@ func prev(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, words[counter].Text)
 }
 
-func guess(w http.ResponseWriter, r *http.Request) {
+func Guess(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		log.Printf("%s method is not allowed", r.Method)
 		return
@@ -113,16 +116,33 @@ func guess(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
+func AddRoutes(mux *http.ServeMux) {
+	mux.HandleFunc("/", StartGame)
+	mux.HandleFunc("/guess", Guess)
+	mux.HandleFunc("/next", Next)
+	mux.HandleFunc("/prev", Prev)
+	mux.HandleFunc("/restart", Restart)
+}
+
+func NewServer() http.Handler {
+	mux := http.NewServeMux()
+	AddRoutes(mux)
+	return mux
+}
 
 func main() {
+	srv := NewServer()
+
+	httpServer := &http.Server{
+		Addr:         ":8080",
+		Handler:      srv,
+		ReadTimeout:  10 * time.Second,
+		WriteTimeout: 10 * time.Second,
+		IdleTimeout:  10 * time.Second,
+	}
+
 	words = game.PickRandomWordsSlice(iterations)
 
-	http.HandleFunc("/", homepage)
-	http.HandleFunc("/guess", guess)
-	http.HandleFunc("/next", next)
-	http.HandleFunc("/prev", prev)
-	http.HandleFunc("/restart", restart)
-
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(httpServer.ListenAndServeTLS("certs/localhost+2.pem", "certs/localhost+2-key.pem"))
 	// game.Repl()
 }
