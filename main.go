@@ -10,18 +10,18 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func NewServer() http.Handler {
+func NewMux() http.Handler {
 	mux := http.NewServeMux()
 	api.AddRoutes(mux)
 	return mux
 }
 
 func main() {
-	srv := NewServer()
+	mux := NewMux()
 
 	httpServer := &http.Server{
 		Addr:         ":8080",
-		Handler:      srv,
+		Handler:      mux,
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
 		IdleTimeout:  10 * time.Second,
