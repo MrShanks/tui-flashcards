@@ -16,7 +16,7 @@ var score = 0
 var iterations = 10
 
 func homepage(w http.ResponseWriter, r *http.Request) {
-	homepage, err := template.ParseFiles("index.html")
+	homepage, err := template.ParseFiles("templates/index.html")
 	tmpl := template.Must(homepage, err)
 	if len(words) == 0 {
 		restart(w, r)
@@ -27,7 +27,7 @@ func homepage(w http.ResponseWriter, r *http.Request) {
 func restart(w http.ResponseWriter, r *http.Request) {
 	words = game.PickRandomWordsSlice(iterations)
 	counter = 0
-	homepage, err := template.ParseFiles("index.html")
+	homepage, err := template.ParseFiles("templates/index.html")
 	tmpl := template.Must(homepage, err)
 	tmpl.Execute(w, words[counter].Text)
 	score = 0
@@ -39,12 +39,12 @@ func next(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if len(words) == 0 {
-		scr, err := template.ParseFiles("card_score.html")
+		scr, err := template.ParseFiles("templates/card_score.html")
 		tmplScore := template.Must(scr, err)
 		tmplScore.Execute(w, fmt.Sprintf("Congrats your score is: %d", score))
 		return
 	}
-	normal, err := template.ParseFiles("card_normal.html")
+	normal, err := template.ParseFiles("templates/card_normal.html")
 	tmpl := template.Must(normal, err)
 	counter++
 	if counter >= len(words) {
@@ -59,12 +59,12 @@ func prev(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if len(words) == 0 {
-		scr, err := template.ParseFiles("card_score.html")
+		scr, err := template.ParseFiles("templates/card_score.html")
 		tmplScore := template.Must(scr, err)
 		tmplScore.Execute(w, fmt.Sprintf("Congrats your score is: %d", score))
 		return
 	}
-	normal, err := template.ParseFiles("card_normal.html")
+	normal, err := template.ParseFiles("templates/card_normal.html")
 	tmpl := template.Must(normal, err)
 	counter--
 	if counter < 0 {
@@ -79,16 +79,16 @@ func guess(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if len(words) == 0 {
-		scr, err := template.ParseFiles("card_score.html")
+		scr, err := template.ParseFiles("templates/card_score.html")
 		tmplScore := template.Must(scr, err)
 		tmplScore.Execute(w, fmt.Sprintf("Congrats your score is: %d", score))
 		return
 	}
 
-	wrong, err := template.ParseFiles("card_wrong.html")
+	wrong, err := template.ParseFiles("templates/card_wrong.html")
 	tmplWrong := template.Must(wrong, err)
 
-	normal, err := template.ParseFiles("card_normal.html")
+	normal, err := template.ParseFiles("templates/card_normal.html")
 	tmplNormal := template.Must(normal, err)
 
 	if r.FormValue("word") == words[counter].Translation {
@@ -97,7 +97,7 @@ func guess(w http.ResponseWriter, r *http.Request) {
 			words = words[:len(words)-1]
 			counter = 0
 			if len(words) == 0 {
-				scr, err := template.ParseFiles("card_score.html")
+				scr, err := template.ParseFiles("templates/card_score.html")
 				tmplScore := template.Must(scr, err)
 				tmplScore.Execute(w, fmt.Sprintf("Congrats your score is: %d", score))
 				return
