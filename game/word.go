@@ -65,9 +65,26 @@ func AddWordToFile() error {
 	return nil
 }
 
+// pickRandomWordsSlice shuffles the words in the array and then returns
+// the first n elements
+func PickRandomWordsSlice(n int) []*Word {
+	words, err := LoadWords()
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	copyWords := make([]*Word, len(words))
+	copy(copyWords, words)
+	rand.Shuffle(
+		len(copyWords), func(i, j int) {
+			copyWords[i], copyWords[j] = copyWords[j], copyWords[i]
+		})
+	return copyWords[:n]
+}
+
 // pickRandomWords shuffles the words in the array and then creates a map of *Words
 // with the first n elements
-func pickRandomWords(n int) map[string]*Word {
+func PickRandomWords(n int) map[string]*Word {
 	words, err := LoadWords()
 	if err != nil {
 		fmt.Println(err)
