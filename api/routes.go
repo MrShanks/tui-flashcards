@@ -2,10 +2,18 @@ package api
 
 import "net/http"
 
-func AddRoutes(mux *http.ServeMux) {
-	mux.HandleFunc("/", StartGame)
-	mux.HandleFunc("/guess", Guess)
-	mux.HandleFunc("/next", Next)
-	mux.HandleFunc("/prev", Prev)
-	mux.HandleFunc("/restart", Restart)
+func NewMux() http.Handler {
+	mux := http.NewServeMux()
+	Game.AddRoutes(mux)
+	return mux
+}
+
+func (g *GameState) AddRoutes(mux *http.ServeMux) {
+	mux.HandleFunc("/", g.Homepage)
+	mux.HandleFunc("/settings", g.Homepage)
+	mux.HandleFunc("/start", g.StartGame)
+	mux.HandleFunc("/guess", g.Guess)
+	mux.HandleFunc("/next", g.Next)
+	mux.HandleFunc("/prev", g.Prev)
+	mux.HandleFunc("/restart", g.Restart)
 }

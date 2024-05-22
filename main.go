@@ -6,18 +6,12 @@ import (
 	"time"
 
 	"github.com/MrShanks/tui-flashcards/api"
-	"github.com/MrShanks/tui-flashcards/game"
 	_ "github.com/lib/pq"
 )
 
-func NewMux() http.Handler {
-	mux := http.NewServeMux()
-	api.AddRoutes(mux)
-	return mux
-}
-
 func main() {
-	mux := NewMux()
+	api.Game = api.NewGame()
+	mux := api.NewMux()
 
 	httpServer := &http.Server{
 		Addr:         ":8080",
@@ -26,8 +20,6 @@ func main() {
 		WriteTimeout: 10 * time.Second,
 		IdleTimeout:  10 * time.Second,
 	}
-
-	api.Words = game.PickRandomWordsSlice(api.Iterations)
 
 	log.Fatal(httpServer.ListenAndServeTLS("certs/localhost+2.pem", "certs/localhost+2-key.pem"))
 	// game.Repl()

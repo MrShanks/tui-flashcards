@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"text/template"
@@ -9,80 +8,104 @@ import (
 	"github.com/MrShanks/tui-flashcards/game"
 )
 
-var (
-	Words      []*game.Word
-	Counter    int
-	Score      = 0
-	Iterations = 10
-)
+var Game *GameState
 
-func StartGame(w http.ResponseWriter, r *http.Request) {
-	homepage, err := template.ParseFiles("templates/index.html")
-	tmpl := template.Must(homepage, err)
-	if len(Words) == 0 {
-		Restart(w, r)
+type GameState struct {
+	Words       []*game.Word
+	CurrentWord *game.Word
+	Counter     int
+	Score       int
+	WordsLeft   int
+}
+
+func NewGame() *GameState {
+	cards := 2
+	words := game.PickRandomWordsSlice(cards)
+	counter := 0
+	currentWord := words[counter]
+	wordLeft := len(words)
+	return &GameState{
+		Words:       words,
+		CurrentWord: currentWord,
+		Counter:     counter,
+		Score:       0,
+		WordsLeft:   wordLeft,
 	}
-	tmpl.Execute(w, Words[Counter].Text)
 }
 
-func Restart(w http.ResponseWriter, r *http.Request) {
-	Words = game.PickRandomWordsSlice(Iterations)
-	Counter = 0
+func (g *GameState) Homepage(w http.ResponseWriter, r *http.Request) {
+	homepage, err := template.ParseFiles("templates/homepage.html")
+	tmpl := template.Must(homepage, err)
+	tmpl.Execute(w, r)
+}
+
+func (g *GameState) StartGame(w http.ResponseWriter, r *http.Request) {
+	game, err := template.ParseFiles("templates/index.html")
+	tmpl := template.Must(game, err)
+	if len(g.Words) == 0 {
+		g.Restart(w, r)
+	}
+	tmpl.Execute(w, g)
+}
+
+func (g *GameState) Restart(w http.ResponseWriter, r *http.Request) {
+	*g = *NewGame()
 	homepage, err := template.ParseFiles("templates/index.html")
 	tmpl := template.Must(homepage, err)
-	tmpl.Execute(w, Words[Counter].Text)
-	Score = 0
+	tmpl.Execute(w, g)
 }
 
-func Next(w http.ResponseWriter, r *http.Request) {
+func (g *GameState) Next(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		log.Printf("%s method is not allowed", r.Method)
 		return
 	}
-	if len(Words) == 0 {
+	if len(g.Words) == 0 {
 		scr, err := template.ParseFiles("templates/card_score.html")
 		tmplScore := template.Must(scr, err)
-		tmplScore.Execute(w, fmt.Sprintf("Congrats your score is: %d", Score))
+		tmplScore.Execute(w, g)
 		return
 	}
 	normal, err := template.ParseFiles("templates/card_normal.html")
 	tmpl := template.Must(normal, err)
-	Counter++
-	if Counter >= len(Words) {
-		Counter = 0
+	g.Counter++
+	if g.Counter >= len(g.Words) {
+		g.Counter = 0
 	}
-	tmpl.Execute(w, Words[Counter].Text)
+	g.CurrentWord = g.Words[g.Counter]
+	tmpl.Execute(w, g)
 }
 
-func Prev(w http.ResponseWriter, r *http.Request) {
+func (g *GameState) Prev(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		log.Printf("%s method is not allowed", r.Method)
 		return
 	}
-	if len(Words) == 0 {
+	if len(g.Words) == 0 {
 		scr, err := template.ParseFiles("templates/card_score.html")
 		tmplScore := template.Must(scr, err)
-		tmplScore.Execute(w, fmt.Sprintf("Congrats your score is: %d", Score))
+		tmplScore.Execute(w, g)
 		return
 	}
 	normal, err := template.ParseFiles("templates/card_normal.html")
 	tmpl := template.Must(normal, err)
-	Counter--
-	if Counter < 0 {
-		Counter = len(Words) - 1
+	g.Counter--
+	if g.Counter < 0 {
+		g.Counter = len(g.Words) - 1
 	}
-	tmpl.Execute(w, Words[Counter].Text)
+	g.CurrentWord = g.Words[g.Counter]
+	tmpl.Execute(w, g)
 }
 
-func Guess(w http.ResponseWriter, r *http.Request) {
+func (g *GameState) Guess(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		log.Printf("%s method is not allowed", r.Method)
 		return
 	}
-	if len(Words) == 0 {
+	if len(g.Words) == 0 {
 		scr, err := template.ParseFiles("templates/card_score.html")
 		tmplScore := template.Must(scr, err)
-		tmplScore.Execute(w, fmt.Sprintf("Congrats your score is: %d", Score))
+		tmplScore.Execute(w, g)
 		return
 	}
 
@@ -92,25 +115,28 @@ func Guess(w http.ResponseWriter, r *http.Request) {
 	normal, err := template.ParseFiles("templates/card_normal.html")
 	tmplNormal := template.Must(normal, err)
 
-	if r.FormValue("word") == Words[Counter].Translation {
-		Score++
-		if Counter == len(Words)-1 {
-			Words = Words[:len(Words)-1]
-			Counter = 0
-			if len(Words) == 0 {
+	if r.FormValue("word") == g.CurrentWord.Translation {
+		g.Score++
+		g.WordsLeft--
+		if g.Counter == len(g.Words)-1 {
+			g.Words = g.Words[:len(g.Words)-1]
+			g.CurrentWord = nil
+			g.Counter = 0
+			if len(g.Words) == 0 {
 				scr, err := template.ParseFiles("templates/card_score.html")
 				tmplScore := template.Must(scr, err)
-				tmplScore.Execute(w, fmt.Sprintf("Congrats your score is: %d", Score))
+				tmplScore.Execute(w, g)
 				return
 			}
-			tmplNormal.Execute(w, Words[Counter].Text)
+			tmplNormal.Execute(w, g)
 		} else {
-			Words = append(Words[:Counter], Words[Counter+1:]...)
-			tmplNormal.Execute(w, Words[Counter].Text)
+			g.Words = append(g.Words[:g.Counter], g.Words[g.Counter+1:]...)
+			g.CurrentWord = g.Words[g.Counter]
+			tmplNormal.Execute(w, g)
 		}
 	} else {
-		Score--
-		tmplWrong.Execute(w, Words[Counter])
+		g.Score--
+		// g.CurrentWord = g.Words[g.Counter]
+		tmplWrong.Execute(w, g)
 	}
-
 }
