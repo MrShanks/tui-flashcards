@@ -10,7 +10,8 @@ func NewMux() http.Handler {
 
 func (g *GameState) AddRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/", g.Homepage)
-	mux.HandleFunc("/settings", g.Homepage)
+	mux.HandleFunc("/settings", g.Settings)
+	mux.HandleFunc("/save-settings", SaveSettings)
 	mux.HandleFunc("/start", g.StartGame)
 	mux.HandleFunc("/guess", g.Guess)
 	mux.HandleFunc("/next", g.Next)

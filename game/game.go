@@ -156,7 +156,7 @@ func NewGame(iterations int) {
 		fmt.Printf("Don't forget to come back tomorrow!\n")
 	}
 
-	registerStats(int32(score))
+	RegisterStats(int32(score))
 
 	Reset()
 

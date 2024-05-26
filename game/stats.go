@@ -18,7 +18,7 @@ const (
 	hhmm     = "15:05"
 )
 
-func registerStats(score int32) {
+func RegisterStats(score int32) {
 	ctx := context.Background()
 
 	godotenv.Load()

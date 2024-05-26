@@ -1,14 +1,17 @@
 package api
 
 import (
+	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 	"text/template"
 
 	"github.com/MrShanks/tui-flashcards/game"
 )
 
-var Game *GameState
+var Game *GameState = nil
+var CardsNumber int = 10
 
 type GameState struct {
 	Words       []*game.Word
@@ -19,8 +22,7 @@ type GameState struct {
 }
 
 func NewGame() *GameState {
-	cards := 2
-	words := game.PickRandomWordsSlice(cards)
+	words := game.PickRandomWordsSlice(CardsNumber)
 	counter := 0
 	currentWord := words[counter]
 	wordLeft := len(words)
@@ -40,6 +42,11 @@ func (g *GameState) Homepage(w http.ResponseWriter, r *http.Request) {
 }
 
 func (g *GameState) StartGame(w http.ResponseWriter, r *http.Request) {
+	g.Words = game.PickRandomWordsSlice(CardsNumber)
+	g.Counter = 0
+	g.Score = 0
+	g.WordsLeft = len(g.Words)
+	g.CurrentWord = g.Words[g.Counter]
 	game, err := template.ParseFiles("templates/index.html")
 	tmpl := template.Must(game, err)
 	if len(g.Words) == 0 {
@@ -123,6 +130,7 @@ func (g *GameState) Guess(w http.ResponseWriter, r *http.Request) {
 			g.CurrentWord = nil
 			g.Counter = 0
 			if len(g.Words) == 0 {
+				game.RegisterStats(int32(g.Score))
 				scr, err := template.ParseFiles("templates/card_score.html")
 				tmplScore := template.Must(scr, err)
 				tmplScore.Execute(w, g)
@@ -136,7 +144,30 @@ func (g *GameState) Guess(w http.ResponseWriter, r *http.Request) {
 		}
 	} else {
 		g.Score--
-		// g.CurrentWord = g.Words[g.Counter]
 		tmplWrong.Execute(w, g)
 	}
+}
+
+func (g *GameState) Settings(w http.ResponseWriter, r *http.Request) {
+	settings, err := template.ParseFiles("templates/settings.html")
+	tmplSettings := template.Must(settings, err)
+	tmplSettings.Execute(w, nil)
+}
+
+func SaveSettings(w http.ResponseWriter, r *http.Request) {
+	settings, err := template.ParseFiles("templates/settings.html")
+	tmplSettings := template.Must(settings, err)
+	err = r.ParseForm()
+	if err != nil {
+		fmt.Printf("Unable to parse form: %s", err)
+		return
+	}
+
+	n := r.FormValue("cards")
+
+	if CardsNumber, err = strconv.Atoi(n); err != nil {
+		fmt.Printf("Couldn't convert value: %s to string: %s", n, err)
+		return
+	}
+	tmplSettings.Execute(w, nil)
 }
