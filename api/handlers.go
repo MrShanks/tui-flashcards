@@ -154,6 +154,13 @@ func (g *GameState) Settings(w http.ResponseWriter, r *http.Request) {
 	tmplSettings.Execute(w, nil)
 }
 
+func (g *GameState) Scores(w http.ResponseWriter, r *http.Request) {
+	dbscores := game.GetStats()
+	scores, err := template.ParseFiles("templates/scores.html")
+	tmplSettings := template.Must(scores, err)
+	tmplSettings.Execute(w, dbscores)
+}
+
 func SaveSettings(w http.ResponseWriter, r *http.Request) {
 	settings, err := template.ParseFiles("templates/settings.html")
 	tmplSettings := template.Must(settings, err)

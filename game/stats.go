@@ -77,3 +77,27 @@ func GetAllStats() {
 	t.SetStyle(table.StyleRounded)
 	t.Render()
 }
+
+func GetStats() []database.Stat {
+	ctx := context.Background()
+
+	godotenv.Load()
+	dbURL := os.Getenv("DB_URL")
+	if dbURL == "" {
+		log.Fatal("dbURL is empty, please double check the env conf")
+	}
+
+	conn, err := sql.Open("postgres", dbURL)
+	if err != nil {
+		log.Fatal("Can't connect to the database: ", err)
+	}
+	defer conn.Close()
+
+	queries := database.New(conn)
+	stats, err := queries.GetStats(ctx)
+	if err != nil {
+		log.Fatal("Can't retrieve scores from database: ", err)
+	}
+
+	return stats
+}
